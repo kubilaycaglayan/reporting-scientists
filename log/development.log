@@ -463,3 +463,30 @@ FOREIGN KEY ("author_id")
   [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "followings"."follower_id", "followings"."followed_id" FROM "followings"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePhotos (20200608150902)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "image_file_name" varchar, "image_content_type" varchar, "image_file_size" integer, "image_updated_at" datetime, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aphotos" ("id" integer NOT NULL PRIMARY KEY, "image_file_name" varchar DEFAULT NULL, "image_content_type" varchar DEFAULT NULL, "image_file_size" integer DEFAULT NULL, "image_updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aphotos" ("id","image_file_name","image_content_type","image_file_size","image_updated_at","user_id","created_at","updated_at")
+                     SELECT "id","image_file_name","image_content_type","image_file_size","image_updated_at","user_id","created_at","updated_at" FROM "photos"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "photos"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "photos" ("id" integer NOT NULL PRIMARY KEY, "image_file_name" varchar DEFAULT NULL, "image_content_type" varchar DEFAULT NULL, "image_file_size" integer DEFAULT NULL, "image_updated_at" datetime DEFAULT NULL, "user_id" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c79d76afc0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "photos" ("id","image_file_name","image_content_type","image_file_size","image_updated_at","user_id","created_at","updated_at")
+                     SELECT "id","image_file_name","image_content_type","image_file_size","image_updated_at","user_id","created_at","updated_at" FROM "aphotos"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aphotos"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200608150902"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
