@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <%= link_to 'All Users', users_path %>
+    <%= link_to 'All Tweets', opinions_path %>
+    <%= link_to 'Sign Up', new_user_path %>
+    <%= link_to "Sign Out(#{current_user.username})", sessions_destroy_path if signed_in? %>
+    <%= link_to 'Sign In', new_session_path unless signed_in? %>
+
     <%= yield %>
   </body>
 </html>

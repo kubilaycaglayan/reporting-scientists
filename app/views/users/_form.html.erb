@@ -21,14 +21,12 @@
     <%= form.text_field :fullname %>
   </div>
 
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo %>
-  </div>
+  <div>
+  <%= form.fields_for :photos do |foto_form| %>
+     <%= foto_form.label :image, "Attach an Image" %><br />
+     <%= foto_form.file_field :image %>
+   <% end %>
 
-  <div class="field">
-    <%= form.label :coverimage %>
-    <%= form.text_field :coverimage %>
   </div>
 
   <div class="actions">
