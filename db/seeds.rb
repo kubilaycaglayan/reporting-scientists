@@ -12,3 +12,8 @@ names.each do |name|
   user = User.create(username: name)
   Opinion.create(author_id: user.id, text: "Hi, I am #{user.username}")
 end
+
+names.size.times do |index|
+  next if index + 1 == 1
+  Following.create(follower_id: 1, followed_id: index + 1)
+end
