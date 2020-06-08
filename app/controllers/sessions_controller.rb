@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts "CREATE IN SESSIONS"
+    puts 'CREATE IN SESSIONS'
     @user = User.find_by(username: params[:user][:username])
     p @user
     if @user
