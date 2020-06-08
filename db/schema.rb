@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_06_08_150902) do
     t.string "coverimage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "followings", "users", column: "followed_id"

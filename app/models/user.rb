@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   # validations
+  validates :username, presence: true, length: { maximum: 50 }, uniqueness: true
+  validates :fullname, length: { maximum: 50 }
 
   # associations
   has_many :following_followings, class_name: 'Following', foreign_key: 'follower_id'
