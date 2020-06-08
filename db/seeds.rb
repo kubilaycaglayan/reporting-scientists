@@ -10,10 +10,22 @@ names = ["Kubilay", "Einstein", "Newton", "Tesla", "Edison", "Mendeleyev"]
 
 names.each do |name|
   user = User.create(username: name)
-  Opinion.create(author_id: user.id, text: "Hi, I am #{user.username}")
+  Opinion.create(author_id: User.last.id, text: "Hi, I am #{user.username}")
 end
 
 names.size.times do |index|
   next if index + 1 == 1
   Following.create(follower_id: 1, followed_id: index + 1)
+end
+
+names = ["Marie Curie", "Darwin", "Galileo", "Bell", "Aristoteles", "Vera"]
+
+names.each do |name|
+  user = User.create(username: name)
+  Opinion.create(author_id: User.find_by(username: name).id, text: "Hi, I am #{user.username}")
+end
+
+names.size.times do |index|
+  next if index + 7 == 12
+  Following.create(follower_id: 12, followed_id: index + 7)
 end
