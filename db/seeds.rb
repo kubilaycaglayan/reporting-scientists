@@ -11,6 +11,12 @@ names = ["Kubilay", "Einstein", "Newton", "Tesla", "Edison", "Mendeleyev"]
 names.each do |name|
   user = User.create(username: name)
   Opinion.create(author_id: User.last.id, text: "Hi, I am #{user.username}")
+  photo = Photo.new(user_id: user.id, image_type: 'profile')
+  photo.image = URI.parse("https://cdn.iconscout.com/icon/free/png-512/avatar-372-456324.png")
+  photo.save
+  photo = Photo.new(user_id: user.id, image_type: 'cover')
+  photo.image = URI.parse("https://ak.picdn.net/shutterstock/videos/12243746/thumb/1.jpg")
+  photo.save
 end
 
 names.size.times do |index|
@@ -23,6 +29,12 @@ names = ["Marie Curie", "Darwin", "Galileo", "Bell", "Aristoteles", "Vera"]
 names.each do |name|
   user = User.create(username: name)
   Opinion.create(author_id: User.find_by(username: name).id, text: "Hi, I am #{user.username}")
+  photo = Photo.new(user_id: user.id, image_type: 'profile')
+  photo.image = URI.parse("https://cdn.iconscout.com/icon/free/png-512/avatar-372-456324.png")
+  photo.save
+  photo = Photo.new(user_id: user.id, image_type: 'cover')
+  photo.image = URI.parse("https://ak.picdn.net/shutterstock/videos/12243746/thumb/1.jpg")
+  photo.save
 end
 
 names.size.times do |index|
