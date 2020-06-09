@@ -65,6 +65,7 @@ end
 
 ["Hello!", "How are you guys?", "let's have some fun!", "Please follow my lead", "Is there anything you want to add?", "Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey "]. each do |tweet|
   Opinion.create(author_id: 1, text: tweet)
+  Opinion.create(author_id: 2, text: tweet)
 end
 
 User.all.each do |user|

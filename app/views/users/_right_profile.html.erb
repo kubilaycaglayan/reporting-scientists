@@ -4,7 +4,9 @@
   <%= image_tag user.profile_images.first.image.url,
    class: 'align-self-center mr-3 rounded' %>
 </div>
-<%= follow_button user %>
+<div class="text-center">
+  <%= follow_button user %>
+</div>
 <h4 class="text-center mb-3"> <%= user.fullname %> </h4>
 <h4 class="text-center"> <%= user.username %> </h4>
 

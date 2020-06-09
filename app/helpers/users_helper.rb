@@ -1,9 +1,11 @@
 module UsersHelper
   def follow_button(user)
-    if following?(user)
-      render 'users/already_following'
+    return if current_user == user
+
+    if current_user.following?(user)
+      render 'users/already_following', user: user
     else
-      render 'users/follow_button'
+      render 'users/follow_button', user: user
     end
   end
 end

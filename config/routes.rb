@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'followings/new'
-  get 'followings/create'
-  get 'followings/destroy'
-  resources :opinions
   resources :users
   resources :sessions, only: [:new, :create]
+  resources :followings, only: [:new, :create, :destroy]
+  resources :opinions
   get 'sessions/destroy'
   root to: 'sessions#new'
 end
