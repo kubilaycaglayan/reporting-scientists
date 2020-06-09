@@ -24,16 +24,25 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @cover_image = @user.cover_images.build unless @user.cover_images.exists?
     @profile_image = @user.profile_images.build unless @user.profile_images.exists?
+    render 'users/edit_form'
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @cover_images = @user.cover_images
-    @profile_images = @user.profile_images
+
+    photo_cover = Photo.new(user_id: @user.id, image_type: 'cover')
+    photo_cover.image = URI.parse('https://ak.picdn.net/shutterstock/videos/12243746/thumb/1.jpg')
+
+    photo_profile = Photo.new(user_id: @user.id, image_type: 'profile')
+    photo_profile.image = URI.parse('https://cdn.iconscout.com/icon/free/png-512/avatar-372-456324.png')
+
+    @user.cover_images << photo_cover
+    @user.profile_images << photo_profile
     respond_to do |format|
       if @user.save
+        sign_in @user
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

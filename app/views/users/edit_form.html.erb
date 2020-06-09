@@ -1,0 +1,56 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fullname %>
+    <%= form.text_field :fullname %>
+  </div>
+
+  <div>
+
+  <% if @user.cover_images.exists? %>
+    <% @user.cover_images.each do |photo| %>
+      <%= image_tag photo.image.url %>
+    <% end %>
+  <% end %>
+
+  <%= form.fields_for :cover_images do |foto_form| %>
+   <%= foto_form.label :image, "Upload your cover image!" %><br />
+   <%= foto_form.file_field :image %>
+   <%= foto_form.text_field :image_type, value: 'cover' %>
+ <% end %>
+</div>
+<div>
+ <% if @user.profile_image? %>
+   <% @user.profile_images.each do |photo| %>
+     <%= image_tag photo.image.url %>
+   <% end %>
+ <% end %>
+
+ <%= form.fields_for :profile_images do |foto_form| %>
+    <%= foto_form.label :image, "Upload your profile image!" %><br />
+    <%= foto_form.file_field :image %>
+    <%= foto_form.text_field :image_type, value: 'profile' %>
+ <% end %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
