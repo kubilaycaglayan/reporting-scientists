@@ -29,9 +29,6 @@ html *
   padding: 0
   box-sizing: border-box
 
-img
-  width: 200px
-
 body
   background-color: $background_gray
   .welcome
@@ -40,6 +37,7 @@ body
     background-position-y: 100%
     height: 100vh
   .left_bar
+    z-index: 99
     position: fixed
     top: 0
     min-width: 250px
@@ -70,11 +68,13 @@ body
             color: white
             text-decoration: none
   .top_bar
+    z-index: 50
     padding-left: 18%
     width: 100%
     height: 10vh
     min-height: 70px
     background-color: $background_blue
+    position: fixed
     .wrapper
       height: 100%
     .top_logo
@@ -82,14 +82,28 @@ body
       color: white
       left: 0
   .right_bar
+    padding-top: 5%
     width: 20%
-    height: 90vh
-    float: right
-    display: block
+    height: 100vh
     border-left: 1px solid gray
-    img
-      width: 30px
+    position: fixed
+    right: 0
+    display: block
+    .who_to_follow
+      img
+        width: 30px
+    .right_profile
+      img
+        width: 100px
+      .col-4
+        border: 1px $gray_text solid
+    .followers
+      img
+        width: 50px
+        height: 50px
   .mid-wrapper
+    width: 80%
+    padding-top: 4.5%
     padding-left: 19%
     .ribbon
       margin-left: -19%
@@ -99,6 +113,7 @@ body
       width: 90%
       img
         width: 50px
+        height: 50px
     .your_tweet
       label
         font-size: 1rem
@@ -109,3 +124,10 @@ body
         font-size: 25px
         padding: 1rem
         outline: none
+    .cover_image
+      height: 40vh
+      margin-left: -19%
+      overflow: hidden
+      img
+        width: 100%
+        margin-top: -5%

@@ -5,20 +5,6 @@
 
 <%= render 'form', user: @user %>
 
-<div class="recent_tweets bg-white border border_dark rounded p-4">
-  <h3 class="my-3">Recent Tweets</h3>
-  <div class="border border_dark"></div>
-  <% @tweets.each do |tweet| %>
-    <div class="media my-3">
-      <%= image_tag tweet.user.profile_images.first.image.url,
-       class: 'align-self-center mr-3 rounded' %>
-    <div class="media-body">
-      <h5 class="mt-0">
-<%= link_to "#{tweet.user.username}", user_path(tweet.user.id)%>
-</h5>
-      <p>  <%= tweet.text %> </p>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'opinions/recent_tweets', tweets: @tweets %>
+
 <br>

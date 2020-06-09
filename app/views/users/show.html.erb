@@ -6,28 +6,12 @@
     <% end %>
   <% end %>
 </div>
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<div class="ribbon border-bottom border-dark py-4">
+  <h2>Tweets</h2>
+</div>
 
-<p>
-  <strong>Fullname:</strong>
-  <%= @user.fullname %>
-</p>
+<% render 'users/right_profile', user: @user %>
 
-<% if @user.profile_image? %>
-  <% @user.profile_images.each do |photo| %>
-    <%= image_tag photo.image.url %>
-  <% end %>
-<% end %>
+<%= render 'opinions/recent_tweets', tweets: @user.opinions %>
 
-<% if @user.cover_image? %>
-  <% @user.cover_images.each do |photo| %>
-    <%= image_tag photo.image.url %>
-  <% end %>
-<% end %>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
 </div>

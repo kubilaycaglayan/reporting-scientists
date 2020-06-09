@@ -1,0 +1,33 @@
+<% content_for :right do %>
+<div class="right_profile">
+<div class="d-flex align-items-center justify-content-center py-5">
+  <%= image_tag user.profile_images.first.image.url,
+   class: 'align-self-center mr-3 rounded' %>
+</div>
+<%= follow_button user %>
+<h4 class="text-center mb-3"> <%= user.fullname %> </h4>
+<h4 class="text-center"> <%= user.username %> </h4>
+
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-4 py-4">
+      <p class="text-center"><%= user.opinions.count %></p>
+      <h5 class="text-center">Tweets</h5>
+    </div>
+    <div class="col-4 py-4">
+      <p class="text-center"><%= user.followings.count %></p>
+      <h5>Following</h5>
+    </div>
+    <div class="col-4 py-4">
+      <p class="text-center"><%= user.followers.count %></p>
+      <h5>Followers</h5>
+    </div>
+  </div>
+</div>
+
+<h4 class="text-center" >FOLLOWED BY</h4>
+
+<%= render 'users/followers', followers: user.followers %>
+
+</div>
+<% end %>
