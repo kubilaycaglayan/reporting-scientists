@@ -8,18 +8,20 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts 'CREATE IN SESSIONS'
-    @user = User.find_by(username: params[:user][:username])
-    p @user
-    if @user
-      session[:current_user_id] = @user.id
+    user = User.find_by(username: params[:user][:username])
+    if user
+      flash[:notice] = 'Login successful.'
+      session[:current_user_id] = user.id
       redirect_to root_path
     else
+      @user = User.new(username: params[:user][:username])
+      flash[:notice] = 'User not exist.'
       render :new
     end
   end
 
   def destroy
+    flash[:notice] = 'Logout successful.'
     session[:current_user_id] = nil
     redirect_to root_path
   end

@@ -19808,3 +19808,827 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 5956)
 
 
+Started GET "/users" for ::1 at 2020-06-09 12:48:51 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:17
+  Rendered users/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 6132)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 0.5ms | Allocations: 26707)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:48:53 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 791)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 5214)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:48:55 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"6yWrwZZBcocVtFSCwpx+O2Wbf4/DYb0K0WUoZDAZHD0Cw3CsXvV3wF8n9NYTeZR+ac7SSil0nCvZEH74XRtwvQ==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:12:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1170)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 2320)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Sessions#new</h1>
+    2: <p>Find me in app/views/sessions/new.html.erb</p>
+    3: 
+    4: <%= form_for @user, url: sessions_path do |form| %>
+    5:   <% if @user.errors.any? %>
+    6:     <div id="error_explanation">
+    7:       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  
+app/views/sessions/new.html.erb:4
+app/controllers/sessions_controller.rb:18:in `create'
+Started POST "/sessions" for ::1 at 2020-06-09 12:50:10 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"6yWrwZZBcocVtFSCwpx+O2Wbf4/DYb0K0WUoZDAZHD0Cw3CsXvV3wF8n9NYTeZR+ac7SSil0nCvZEH74XRtwvQ==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Create User"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 577)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 0.7ms | Allocations: 13220)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:50:14 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 496)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4303)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:50:15 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 495)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 4313)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:51:08 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 658)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 5475)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:51:10 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"qDvEHXEYWp+79u/o3KdDrQie5+Hofe27+1OzHwGoks9Rr/jjUDygEiEvGveyAv4i4Ibica7ypX504Cg/4aYoIQ==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 381)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 4738)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:51:12 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"TouCFC3uFAjG4u2wfpFY6n6Bef4Er7/G70lYOIcjMsW3H77qDMruhVw7GK8QNOVllpl8bkIg9wNg+sMYZy2IKw==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.1ms | Allocations: 4740)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:51:53 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"+zG5Vl9tsHswOzE9MPtYiAhWfLC2SMaMOYFGd8alZn8CpYWofklK9qrixCJeXuUH4E55IPDHjkm2Mt1XJqvckQ==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 437)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 12880)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:51:54 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"38HKGAstpPhpmhHXAadXYflXe/B+1VYy5bpTDKllqTwmVfbmKgledfND5MhvAuruEU9+YDhaHvdqCcgsSWsT0g==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 0.3ms | Allocations: 4741)
+
+
+Started GET "/sessions" for ::1 at 2020-06-09 12:52:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-09 12:53:04 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 688)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 5507)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:53:07 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"9LQ5tHuwmwlWTBQd31vt3bHrIR3Znnmc3Xmn21kywXkNIAVKWpRhhMyV4QKx/lBSWfMkjZ8RMVlSyjz7uTx7lw==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 396)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 4749)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:53:08 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KsrfaDHiI7601zIN1tiKCF3R4D6H4+sgwknLVzhKmvXTXuOWEMbZMy4OxxK4fTeHtcnlrsFso+VN+lB32EQgGw==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 394)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 0.2ms | Allocations: 4751)
+
+
+Started GET "/sessions" for ::1 at 2020-06-09 12:53:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-09 12:53:46 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 0.6ms | Allocations: 12278)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:53:48 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 4203)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:53:49 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"rNxTT4QNjoYSWG8pvlcWQug2jpTP/4wTjBVV7zwVHc9VSG+xpSl0C4iBmjbQ8qvNAC6LBIlwxNYDps7P3BunIQ==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 395)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4912)
+
+
+Started GET "/sessions" for ::1 at 2020-06-09 12:55:01 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions" for ::1 at 2020-06-09 12:55:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions" for ::1 at 2020-06-09 12:55:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/sessions"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-09 12:55:04 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 12298)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:55:07 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"afPheMShIqElye4euF+Oli3u/odfrk3vaANwaCNCIp6QZ92G5YXYLL8QGwHW+jMZxfb7FxkhBSrnsOtIw0yYcA==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 4915)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:55:08 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"5rxLjXyvaP8QyWRfMhKQk8c0l78uneRy6FmgBuB6UMgfKHdzXYuScooQkUBcty0cLyySL2gSrLdn6jsmAHTqJg==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 385)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 0.6ms | Allocations: 4773)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:55:14 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"B0sy0veQpBM7+WcTiwEVPVdTr5jud0o/tKkWZSIhdGb+3w4s1rRenqEgkgzlpKiyv0uqCKj4Avo7Go1Fwi/OiA==", "user"=>{"username"=>"Mendeleyev"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mendeleyev"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 898)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:55:14 +0300
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/opinions
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 309)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:55:14 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 5110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.8ms | Allocations: 10683)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:55:18 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 6400)
+
+
+Started GET "/sessions/destroy" for ::1 at 2020-06-09 12:55:32 +0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 301)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:55:32 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 398)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4228)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:55:35 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4204)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:55:37 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 4202)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:55:37 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4202)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:55:42 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"9dDsxgKsQ4CZIK2aqbLNcYTA5JzyMQMg50lZJ47YdA8cNjeryhhGx9OzDc54Vyc0iJVJWRgkIgHvPA+749oYjw==", "user"=>{"username"=>"Mendeleyev"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mendeleyev"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 892)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:55:42 +0300
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/opinions
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:55:42 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.3ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 6382)
+
+
+Started GET "/sessions/destroy" for ::1 at 2020-06-09 12:55:43 +0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 296)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:55:43 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4220)
+
+
+Started GET "/sessions/new" for ::1 at 2020-06-09 12:55:44 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 390)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4208)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:55:46 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"kUXKU3ESPjGghTpYWPFhrvCjBM/UecuEANv5u9oi3Ct4oxE+uaY7duoWmgyJFIvr/PapCj5s6qUIrq8ntyCwqw==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 385)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4784)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:55:50 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tKDlFv45Azo7lfm47KiInIfZkwBOiXTm8ObS2hFPA+hNNNno3x35t6FMDKeCDTUTb8GWkAgGPCN/VUn68UG5Bg==", "user"=>{"username"=>"Mendeleyev"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mendeleyev"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 877)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:55:50 +0300
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/opinions
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 313)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:55:50 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2012)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 6406)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:56:26 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 5001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.9ms | Allocations: 17778)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:56:26 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 6389)
+
+
+Started GET "/sessions/destroy" for ::1 at 2020-06-09 12:56:27 +0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 307)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:56:27 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4425)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:56:29 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bCD8+pwrnPk2YDeNQ/gjSjbIDgpa1qyi2MXozS34mbSFxieXVJ+Zvnzzl9mSHckPOp2jz7DDjYPQsL5RQPr1NA==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 4921)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:56:32 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xURZO6M30aWgPm+oqypRhXaEdaJgqB1TIDc4mL23OdA80GXFghMrKDrnmrfFj+wKnpxwMiYnVZavhKO4XbmDPg==", "user"=>{"username"=>"Mendeleyev"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mendeleyev"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:56:32 +0300
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/opinions
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 302)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:56:32 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2012)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 6388)
+
+
+Started GET "/opinions/2" for ::1 at 2020-06-09 12:56:34 +0300
+Processing by OpinionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/opinions_controller.rb:66:in `set_opinion'
+  Rendering opinions/show.html.erb within layouts/application
+  Rendered opinions/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.2ms | Allocations: 5423)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:56:36 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.4ms | Allocations: 6390)
+
+
+Started GET "/sessions/destroy" for ::1 at 2020-06-09 12:56:58 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 317)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:56:58 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 12273)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:57:01 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Kf1gTlSiDM4loGePxMYN4T0+1feeMw1wczAubfjRm43AG7sjnBYJiW8zx9sVI+ekMWt4MnQmLFF7RXjxldP3DQ==", "user"=>{"username"=>"Kubilay"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 12.0ms | ActiveRecord: 0.5ms | Allocations: 4939)
+
+
+Started POST "/sessions" for ::1 at 2020-06-09 12:57:08 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"yLlLgTt3zq8yDwtS5lodjMggIA5UbCKq+mZPRQyQUCkxLXd/GlM0IqjW/k2I/6ADIDglnhLjam911dRl7J7qxw==", "user"=>{"username"=>"Mendeleyev"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mendeleyev"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 902)
+
+
+Started GET "/" for ::1 at 2020-06-09 12:57:08 +0300
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/opinions
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 316)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:57:08 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4794)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.8ms | Allocations: 9969)
+
+
+Started GET "/opinions/5/edit" for ::1 at 2020-06-09 12:57:12 +0300
+Processing by OpinionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOpinion Load (0.3ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/opinions_controller.rb:66:in `set_opinion'
+  Rendering opinions/edit.html.erb within layouts/application
+  Rendered opinions/_form.html.erb (Duration: 3.5ms | Allocations: 1259)
+  Rendered opinions/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.4ms | Allocations: 6796)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:57:14 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 6392)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:57:17 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2011)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 6390)
+
+
+Started GET "/users" for ::1 at 2020-06-09 12:57:18 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:17
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2443)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.8ms | Allocations: 7441)
+
+
+Started GET "/users/2" for ::1 at 2020-06-09 12:57:19 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40:in `profile_image?'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:41:in `profile_image?'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ?[0m  [["user_id", 2], ["image_type", "profile"]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "cover"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:48:in `cover_image?'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "cover"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49:in `cover_image?'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ?[0m  [["user_id", 2], ["image_type", "cover"]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 22.3ms | Allocations: 12541)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 1.5ms | Allocations: 17489)
+
+
+Started GET "/users" for ::1 at 2020-06-09 12:57:20 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:17
+  Rendered users/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 6518)
+
+
+Started GET "/users/8" for ::1 at 2020-06-09 12:57:21 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `set_user'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40:in `profile_image?'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:41:in `profile_image?'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ?[0m  [["user_id", 8], ["image_type", "profile"]]
+  ↳ app/views/users/show.html.erb:14
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "cover"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:48:in `cover_image?'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "cover"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:49:in `cover_image?'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ?[0m  [["user_id", 8], ["image_type", "cover"]]
+  ↳ app/views/users/show.html.erb:20
+  Rendered users/show.html.erb within layouts/application (Duration: 15.8ms | Allocations: 5352)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.9ms | Allocations: 10248)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 12:57:22 +0300
+Processing by OpinionsController#index as HTML
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mOpinion Load (1.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions"[0m
+  ↳ app/views/opinions/index.html.erb:15
+  Rendered opinions/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2020)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+Completed 200 OK in 23ms (Views: 19.4ms | ActiveRecord: 1.5ms | Allocations: 6393)
+
+

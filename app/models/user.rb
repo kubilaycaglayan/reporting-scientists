@@ -20,7 +20,6 @@ class User < ApplicationRecord
            inverse_of: :user, class_name: 'Photo', dependent: :destroy
   accepts_nested_attributes_for :profile_images
 
-  # methods
   def follow(user)
     Following.create(follower_id: id, followed_id: user.id)
   end
