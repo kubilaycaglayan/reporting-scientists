@@ -36,6 +36,11 @@ class User < ApplicationRecord
     Opinion.where(id: followings.ids)
   end
 
+  def unfollowings
+    unfollowing_ids = User.ids - (followings.ids << id)
+    User.where(id: unfollowing_ids)
+  end
+
   def profile_image?
     if profile_images.first
       profile_images.first.image_file_name ? true : false

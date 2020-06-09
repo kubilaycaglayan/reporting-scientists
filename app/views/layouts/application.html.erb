@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RubyOnRailsCapstoneProjectTwitter</title>
+    <title>Chirping Scientists</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= link_to 'All Users', users_path %>
-    <%= link_to 'All Tweets', opinions_path %>
-    <%= link_to 'Sign Up', new_user_path %>
-    <%= link_to "Sign Out(#{current_user.username})", sessions_destroy_path if signed_in? %>
-    <%= link_to 'Sign In', new_session_path unless signed_in? %>
 
-    <%= yield %>
+    <div class="left_bar">
+      <%= yield :left %>
+    </div>
+    <div class="top_bar">
+      <%= yield :top %>
+
+      <%= link_to 'All Users', users_path %>
+      <%= link_to 'All Tweets', opinions_path %>
+      <%= link_to 'Sign Up', new_user_path %>
+      <%= link_to "Sign Out(#{current_user.username})", sessions_destroy_path if signed_in? %>
+      <%= link_to 'Sign In', new_session_path unless signed_in? %>
+    </div>
+    <div class="right_bar">
+      <%= yield :right %>
+    </div>
+    <%= yield :main %>
   </body>
 </html>
