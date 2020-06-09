@@ -9,18 +9,14 @@
     <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
 
   </head>
 
   <body>
-    <div class="welcome d-flex justify-content-center align-items-center">
-      <div class="bg-white p-5 rounded">
-      <%= link_to 'All Users', users_path %>
-      <%= link_to 'All Tweets', opinions_path %>
-      <%= link_to 'Sign Up', new_user_path %>
-      <%= link_to "Sign Out(#{current_user.username})", sessions_destroy_path if signed_in? %>
-      <%= link_to 'Sign In', new_session_path unless signed_in? %>
-
+    <div class="welcome d-flex flex-column justify-content-center align-items-center">
+      <h1 class="invitation m-2 display-1 p-5 rounded-pill">Chirping Scientists</h1>
+      <div class="bg-white p-4 rounded text-center">
       <%= yield %>
       </div>
     </div>

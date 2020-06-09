@@ -12,42 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.label :username, class: 'py-2' %>
+    <%= form.text_field :username, required: true, class: 'pl-2' %>
   </div>
 
   <div class="field">
-    <%= form.label :fullname %>
-    <%= form.text_field :fullname %>
-  </div>
-
-  <div>
-
-  <% if @user.cover_images.exists? %>
-    <% @user.cover_images.each do |photo| %>
-      <%= image_tag photo.image.url %>
-    <% end %>
-  <% end %>
-
-  <%= form.fields_for :cover_images do |foto_form| %>
-   <%= foto_form.label :image, "Upload your cover image!" %><br />
-   <%= foto_form.file_field :image %>
-   <%= foto_form.text_field :image_type, value: 'cover' %>
- <% end %>
-</div>
-<div>
- <% if @user.profile_image? %>
-   <% @user.profile_images.each do |photo| %>
-     <%= image_tag photo.image.url %>
-   <% end %>
- <% end %>
-
- <%= form.fields_for :profile_images do |foto_form| %>
-    <%= foto_form.label :image, "Upload your profile image!" %><br />
-    <%= foto_form.file_field :image %>
-    <%= foto_form.text_field :image_type, value: 'profile' %>
- <% end %>
-
+    <%= form.label :fullname, class: 'py-2' %>
+    <%= form.text_field :fullname, required: true, class: 'pl-2' %>
   </div>
 
   <div class="actions">
