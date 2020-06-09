@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @user.fullname %>
+</p>
+
+<% if @user.profile_image? %>
+  <% @user.profile_images.each do |photo| %>
+    <%= image_tag photo.image.url %>
+  <% end %>
+<% end %>
+
+<% if @user.cover_image? %>
+  <% @user.cover_images.each do |photo| %>
+    <%= image_tag photo.image.url %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

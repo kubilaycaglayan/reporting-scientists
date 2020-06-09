@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<div class="ribbon border-bottom border-dark py-4">
+  <h2>Tweets</h2>
+</div>
 <%= render 'users/who_to_follow', unfollowings: current_user.unfollowings %>
 
 <%= render 'form', user: @user %>
@@ -12,7 +13,9 @@
       <%= image_tag tweet.user.profile_images.first.image.url,
        class: 'align-self-center mr-3 rounded' %>
     <div class="media-body">
-      <h5 class="mt-0"><%= tweet.user.username %></h5>
+      <h5 class="mt-0">
+<%= link_to "#{tweet.user.username}", user_path(tweet.user.id)%>
+</h5>
       <p>  <%= tweet.text %> </p>
       </div>
     </div>

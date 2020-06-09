@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
-
+<div class="show_user">
+<div class="cover_image">
+  <% if @user.cover_image? %>
+    <% @user.cover_images.each do |photo| %>
+      <%= image_tag photo.image.url %>
+    <% end %>
+  <% end %>
+</div>
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
@@ -24,3 +30,4 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>

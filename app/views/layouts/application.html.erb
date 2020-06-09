@@ -4,7 +4,7 @@
     <title>Chirping Scientists</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="icon" href="https://png.pngtree.com/png-clipart/20200225/original/pngtree-science-icon-png-image_5273869.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -20,7 +20,7 @@
         <%= image_tag current_user.profile_images.first.image.url,
          class: 'align-self-center mr-3 rounded' %>
         <div class="media-body align-self-center">
-          <h5 class="mt-0 "><%= current_user.username%></h5>
+          <h5 class="mt-0 "><%= link_to "#{current_user.username}", user_path(current_user.id)%></h5>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
         <div class="top_logo">
           <i class="fab fa-twitter"></i>
         </div>
-
+<p id="notice"><%= notice %></p>
       </div>
       <%= yield :top %>
     </div>
