@@ -9,7 +9,10 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show; end
+  def show
+    @user = User.find(params[:id])
+    @followers = @user.followers.includes(:profile_images)
+  end
 
   # GET /users/new
   def new
@@ -40,15 +43,12 @@ class UsersController < ApplicationController
 
     @user.cover_images << photo_cover
     @user.profile_images << photo_profile
-    respond_to do |format|
-      if @user.save
-        sign_in @user
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      sign_in @user
+      redirect_to @user, notice: 'User was successfully created.'
+    else
+      flash[:notice] = 'That username is taken, try a different one...'
+      redirect_to new_user_path
     end
   end
 

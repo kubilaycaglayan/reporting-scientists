@@ -1,5 +1,5 @@
 <div class="p-3 followers">
-  <% followers.each do |follower| %>
+  <% @followers.each do |follower| %>
   <div class="media my-3">
     <%= image_tag follower.profile_images.first.image.url,
      class: 'align-self-center mr-3 rounded' %>
