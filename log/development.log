@@ -37794,3 +37794,1803 @@ Processing by OpinionsController#index as HTML
 Completed 200 OK in 81ms (Views: 74.0ms | ActiveRecord: 2.1ms | Allocations: 57139)
 
 
+Started GET "/opinions" for ::1 at 2020-06-09 17:51:56 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  Rendered users/_who_to_follow.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered opinions/_form.html.erb (Duration: 1.2ms | Allocations: 761)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 77.9ms | Allocations: 54461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 115ms (Views: 88.9ms | ActiveRecord: 4.5ms | Allocations: 79714)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 17:53:07 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  Rendered users/_who_to_follow.html.erb (Duration: 0.5ms | Allocations: 122)
+  Rendered opinions/_form.html.erb (Duration: 1.6ms | Allocations: 711)
+  [1m[36mOpinion Load (0.3ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 78.3ms | Allocations: 46971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 102ms (Views: 87.8ms | ActiveRecord: 2.3ms | Allocations: 59177)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 17:53:11 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  Rendered users/_who_to_follow.html.erb (Duration: 0.2ms | Allocations: 122)
+  Rendered opinions/_form.html.erb (Duration: 0.8ms | Allocations: 711)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 58.6ms | Allocations: 46970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 77ms (Views: 72.5ms | ActiveRecord: 1.5ms | Allocations: 59176)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 17:55:26 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 9], ["id", 7], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:5
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  Rendered users/_who_to_follow.html.erb (Duration: 10.8ms | Allocations: 9960)
+  Rendered opinions/_form.html.erb (Duration: 4.8ms | Allocations: 710)
+  [1m[36mOpinion Load (0.3ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 62.9ms | Allocations: 39600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 81ms (Views: 72.8ms | ActiveRecord: 3.4ms | Allocations: 51802)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 17:55:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opinions" for ::1 at 2020-06-09 17:55:56 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 9], ["id", 7], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:5
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:7
+  Rendered users/_who_to_follow.html.erb (Duration: 19.5ms | Allocations: 9783)
+  Rendered opinions/_form.html.erb (Duration: 0.8ms | Allocations: 433)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 58.4ms | Allocations: 38651)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 100ms (Views: 85.9ms | ActiveRecord: 3.1ms | Allocations: 59144)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 17:55:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opinions" for ::1 at 2020-06-09 17:57:03 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 9], ["id", 7], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 12.7ms | Allocations: 9448)
+  Rendered opinions/_form.html.erb (Duration: 1.7ms | Allocations: 710)
+  [1m[36mOpinion Load (0.3ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 51.8ms | Allocations: 39088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 69ms (Views: 61.1ms | ActiveRecord: 2.8ms | Allocations: 51291)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 17:57:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opinions" for ::1 at 2020-06-09 17:57:16 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 9], ["id", 7], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 20.2ms | Allocations: 9446)
+  Rendered opinions/_form.html.erb (Duration: 1.0ms | Allocations: 713)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 65.0ms | Allocations: 39089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 89ms (Views: 76.8ms | ActiveRecord: 3.0ms | Allocations: 51296)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 17:57:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opinions" for ::1 at 2020-06-09 17:57:28 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 9], ["id", 7], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 14.5ms | Allocations: 9445)
+  Rendered opinions/_form.html.erb (Duration: 1.1ms | Allocations: 710)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 58.4ms | Allocations: 39090)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 83ms (Views: 66.0ms | ActiveRecord: 4.4ms | Allocations: 51295)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 17:57:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opinions" for ::1 at 2020-06-09 17:59:57 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?) ORDER BY "users"."id" DESC[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 9], ["id", 7], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 21.7ms | Allocations: 16193)
+  Rendered opinions/_form.html.erb (Duration: 0.8ms | Allocations: 471)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" IN (?, ?, ?, ?, ?, ?) ORDER BY "opinions"."id" DESC[0m  [["author_id", 2], ["author_id", 3], ["author_id", 4], ["author_id", 5], ["author_id", 6], ["author_id", 1]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["id", 1], ["id", 2], ["id", 6], ["id", 5], ["id", 4]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 61.5ms | Allocations: 45802)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 1]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 90ms (Views: 68.5ms | ActiveRecord: 3.9ms | Allocations: 70244)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 17:59:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/sessions/destroy" for ::1 at 2020-06-09 18:00:54 +0300
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/" for ::1 at 2020-06-09 18:00:54 +0300
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/welcome
+  Rendered sessions/new.html.erb within layouts/welcome (Duration: 1.9ms | Allocations: 735)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 5251)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 18:00:54 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/sessions" for ::1 at 2020-06-09 18:00:57 +0300
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Uig4t1jWOu9eTJxlVmC1cQ+2ZKglYxyAt0vw282tiC+7zuPakGI/qBTfPDGHhV80A+PJbc92PaG/PqZHoK/krw==", "user"=>{"username"=>"Newton"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Newton"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms | Allocations: 1051)
+
+
+Started GET "/" for ::1 at 2020-06-09 18:00:57 +0300
+Processing by SessionsController#new as HTML
+Redirected to http://localhost:3000/opinions
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 314)
+
+
+Started GET "/opinions" for ::1 at 2020-06-09 18:00:57 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "users"."id" DESC[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 5], ["id", 2], ["id", 9], ["id", 1], ["id", 7], ["id", 6], ["id", 4], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 21.2ms | Allocations: 15495)
+  Rendered opinions/_form.html.erb (Duration: 0.6ms | Allocations: 419)
+  [1m[36mOpinion Load (0.2ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" = ? ORDER BY "opinions"."id" DESC[0m  [["author_id", 3]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 21820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 43ms (Views: 35.7ms | ActiveRecord: 2.5ms | Allocations: 32845)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 18:00:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Kubilay"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mOpinion Create (0.1ms)[0m  [1m[32mINSERT INTO "opinions" ("author_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["author_id", 13], ["text", "Hi, I am Kubilay"], ["created_at", "2020-06-09 15:01:22.049408"], ["updated_at", "2020-06-09 15:01:22.049408"]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1br6cdc.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-w3svyw.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-w3svyw.png'
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1br6cdc.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-7ijgtz.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-7ijgtz.png'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-5g4bar.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1ktpe1w.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1ktpe1w.jpg'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-5g4bar.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-193fr1m.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-193fr1m.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Einstein"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mOpinion Create (0.3ms)[0m  [1m[32mINSERT INTO "opinions" ("author_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["author_id", 13], ["text", "Hi, I am Einstein"], ["created_at", "2020-06-09 15:01:22.774751"], ["updated_at", "2020-06-09 15:01:22.774751"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1tk6ii9.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-l214fz.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-l214fz.png'
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1tk6ii9.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1rud60d.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1rud60d.png'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-jm9u2i.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-idakym.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-idakym.jpg'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-jm9u2i.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-4ychp8.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-4ychp8.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Newton"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mOpinion Create (0.4ms)[0m  [1m[32mINSERT INTO "opinions" ("author_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["author_id", 13], ["text", "Hi, I am Newton"], ["created_at", "2020-06-09 15:01:23.384277"], ["updated_at", "2020-06-09 15:01:23.384277"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-vrz1wf.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-11zmtt2.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-11zmtt2.png'
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-vrz1wf.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1ce8n7f.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1ce8n7f.png'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1e6hjg7.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-178i69v.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-178i69v.jpg'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1e6hjg7.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1p1jw4u.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1p1jw4u.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Tesla"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mOpinion Create (0.2ms)[0m  [1m[32mINSERT INTO "opinions" ("author_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["author_id", 13], ["text", "Hi, I am Tesla"], ["created_at", "2020-06-09 15:01:23.948159"], ["updated_at", "2020-06-09 15:01:23.948159"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-3n5lh0.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-6zbe16.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-6zbe16.png'
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-3n5lh0.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-iq90rj.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-iq90rj.png'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-18bwk9z.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1stkqht.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1stkqht.jpg'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-18bwk9z.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-12jfpsc.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-12jfpsc.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Edison"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mOpinion Create (0.5ms)[0m  [1m[32mINSERT INTO "opinions" ("author_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["author_id", 13], ["text", "Hi, I am Edison"], ["created_at", "2020-06-09 15:01:24.532651"], ["updated_at", "2020-06-09 15:01:24.532651"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-7x8apy.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1i2qzj0.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1i2qzj0.png'
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-7x8apy.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-gyfzy6.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-gyfzy6.png'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-omogoe.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1mpcbha.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1mpcbha.jpg'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-omogoe.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-4vxaoe.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-4vxaoe.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mendeleyev"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mOpinion Create (0.5ms)[0m  [1m[32mINSERT INTO "opinions" ("author_id", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["author_id", 13], ["text", "Hi, I am Mendeleyev"], ["created_at", "2020-06-09 15:01:25.142184"], ["updated_at", "2020-06-09 15:01:25.142184"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-4tb3ct.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-166v160.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-166v160.png'
+[paperclip] Trying to link /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-4tb3ct.png to /tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1m7a627.png
+Command :: file -b --mime '/tmp/d7b1373b5b2b5adcfe5f21d87cafde3e20200609-1927-1m7a627.png'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1nx3ml7.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-17ty0f0.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-17ty0f0.jpg'
+[paperclip] Trying to link /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1nx3ml7.jpg to /tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1l0z3o2.jpg
+Command :: file -b --mime '/tmp/c4ca4238a0b923820dcc509a6f75849b20200609-1927-1l0z3o2.jpg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFollowing Create (4.7ms)[0m  [1m[32mINSERT INTO "followings" ("follower_id", "followed_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["follower_id", 1], ["followed_id", 2], ["created_at", "2020-06-09 15:01:25.753228"], ["updated_at", "2020-06-09 15:01:25.753228"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/opinions" for ::1 at 2020-06-09 18:01:31 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "users"."id" DESC[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 5], ["id", 2], ["id", 9], ["id", 1], ["id", 7], ["id", 6], ["id", 4], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 26.5ms | Allocations: 15495)
+  Rendered opinions/_form.html.erb (Duration: 1.0ms | Allocations: 411)
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" = ? ORDER BY "opinions"."id" DESC[0m  [["author_id", 3]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 51.6ms | Allocations: 21774)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 70ms (Views: 56.9ms | ActiveRecord: 3.6ms | Allocations: 32791)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 18:01:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-06-09 18:01:35 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:17
+  Rendered users/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2567)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.6ms | Allocations: 12143)
+
+
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 18:01:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/opinions" for ::1 at 2020-06-09 18:01:47 +0300
+Processing by OpinionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/models/user.rb:36:in `visible_opinions'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  Rendering opinions/index.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "users"."id" FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/models/user.rb:42:in `unfollowings'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ORDER BY "users"."id" DESC[0m  [["id", 11], ["id", 13], ["id", 10], ["id", 8], ["id", 5], ["id", 2], ["id", 9], ["id", 1], ["id", 7], ["id", 6], ["id", 4], ["id", 12]]
+  ↳ app/views/users/_who_to_follow.html.erb:6
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 13], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+Started GET "/images/original/missing.png" for ::1 at 2020-06-09 18:01:47 +0300
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 12], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 11], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.8ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 10], ["image_type", "profile"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.9ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 9], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  
+ActionController::RoutingError (No route matches [GET] "/images/original/missing.png"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 8], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 7], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 6], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 5], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 4], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 2], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 1], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/users/_who_to_follow.html.erb:8
+  Rendered users/_who_to_follow.html.erb (Duration: 66.5ms | Allocations: 42576)
+  Rendered opinions/_form.html.erb (Duration: 1.2ms | Allocations: 419)
+  [1m[36mOpinion Load (0.1ms)[0m  [1m[34mSELECT "opinions".* FROM "opinions" WHERE "opinions"."author_id" = ? ORDER BY "opinions"."id" DESC[0m  [["author_id", 3]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/views/opinions/index.html.erb:10
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/opinions/index.html.erb:12
+  Rendered opinions/index.html.erb within layouts/application (Duration: 82.0ms | Allocations: 49429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE Photo Load (0.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = ? AND "photos"."image_type" = ? ORDER BY "photos"."id" ASC LIMIT ?[0m  [["user_id", 3], ["image_type", "profile"], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."followed_id" WHERE "followings"."follower_id" = ?[0m  [["follower_id", 3]]
+  ↳ app/views/layouts/application.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:11:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "followings" ON "users"."id" = "followings"."follower_id" WHERE "followings"."followed_id" = ?[0m  [["followed_id", 3]]
+  ↳ app/views/layouts/application.html.erb:37
+Completed 200 OK in 112ms (Views: 91.0ms | ActiveRecord: 5.7ms | Allocations: 68996)
+
+

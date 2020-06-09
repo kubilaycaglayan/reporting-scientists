@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= render 'users/who_to_follow' %>
+<%= render 'users/who_to_follow', unfollowings: current_user.unfollowings %>
 
 <%= render 'form', user: @user %>
 
@@ -9,7 +9,7 @@
   <div class="border border_dark"></div>
   <% @tweets.each do |tweet| %>
     <div class="media my-3">
-      <%= image_tag current_user.profile_images.first.image.url,
+      <%= image_tag tweet.user.profile_images.first.image.url,
        class: 'align-self-center mr-3 rounded' %>
     <div class="media-body">
       <h5 class="mt-0"><%= tweet.user.username %></h5>

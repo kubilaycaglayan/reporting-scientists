@@ -40,7 +40,7 @@ class User < ApplicationRecord
 
   def unfollowings
     unfollowing_ids = User.ids - (followings.ids << id)
-    User.where(id: unfollowing_ids)
+    User.where(id: unfollowing_ids).order(id: :desc)
   end
 
   def profile_image?
