@@ -1,10 +1,12 @@
-<%= form_with(model: opinion, local: true) do |form| %>
-  <% if opinion.errors.any? %>
+<div class="your_tweet bg-white border border_dark rounded p-4 my-3">
+
+<%= form_with(model: @opinion, local: true) do |form| %>
+  <% if @opinion.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(opinion.errors.count, "error") %> prohibited this opinion from being saved:</h2>
+      <h2><%= pluralize(@opinion.errors.count, "error") %> prohibited this @opinion from being saved:</h2>
 
       <ul>
-        <% opinion.errors.full_messages.each do |message| %>
+        <% @opinion.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -12,16 +14,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :author_id %>
-    <%= form.number_field :author_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.label 'Share something...' %>
+    <%= form.text_area :text, required: true, length: { max: 140 } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Tweet', class: 'btn btn-primary'%>
   </div>
 <% end %>
+
+</div>

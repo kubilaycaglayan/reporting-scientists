@@ -5,6 +5,7 @@ class OpinionsController < ApplicationController
   # GET /opinions.json
   def index
     @tweets = current_user.visible_opinions.includes(:user)
+    @opinion = current_user.opinions.build
   end
 
   # GET /opinions/1
@@ -13,7 +14,7 @@ class OpinionsController < ApplicationController
 
   # GET /opinions/new
   def new
-    @opinion = Opinion.new
+    @opinion = current_user.opinion.build
   end
 
   # GET /opinions/1/edit
@@ -22,11 +23,11 @@ class OpinionsController < ApplicationController
   # POST /opinions
   # POST /opinions.json
   def create
-    @opinion = Opinion.new(opinion_params)
+    @opinion = current_user.opinions.new(opinion_params)
 
     respond_to do |format|
       if @opinion.save
-        format.html { redirect_to @opinion, notice: 'Opinion was successfully created.' }
+        format.html { redirect_to opinions_path, notice: 'Opinion was successfully created.' }
         format.json { render :show, status: :created, location: @opinion }
       else
         format.html { render :new }

@@ -1,12 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tweets</h1>
+<%= render 'users/who_to_follow' %>
 
-<div class="recent_tweets bg-white border border_dark rounded">
-  <h3>Recent Tweets</h3>
+<%= render 'form', user: @user %>
+
+<div class="recent_tweets bg-white border border_dark rounded p-4">
+  <h3 class="my-3">Recent Tweets</h3>
+  <div class="border border_dark"></div>
   <% @tweets.each do |tweet| %>
-    <div class="media">
-    <img src="..." class="align-self-center mr-3" alt="...">
+    <div class="media my-3">
+      <%= image_tag current_user.profile_images.first.image.url,
+       class: 'align-self-center mr-3 rounded' %>
     <div class="media-body">
       <h5 class="mt-0"><%= tweet.user.username %></h5>
       <p>  <%= tweet.text %> </p>
@@ -15,5 +19,3 @@
   <% end %>
 </div>
 <br>
-
-<%= link_to 'New Opinion', new_opinion_path %>
