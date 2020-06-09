@@ -12,8 +12,11 @@ class User < ApplicationRecord
 
   has_many :opinions, foreign_key: 'author_id'
 
-  has_many :photos, inverse_of: :user
-  accepts_nested_attributes_for :photos
+  has_many :cover_images, -> { where(image_type: 'cover') }, inverse_of: :user, class_name: 'Photo'
+  accepts_nested_attributes_for :cover_images
+
+  has_many :profile_images, -> { where(image_type: 'profile') }, inverse_of: :user, class_name: 'Photo'
+  accepts_nested_attributes_for :profile_images
 
   # methods
   def follow(user)
@@ -30,5 +33,21 @@ class User < ApplicationRecord
 
   def visible_opinions
     Opinion.where(id: followings.ids)
+  end
+
+  def profile_image?
+    if profile_images.first
+      profile_images.first.image_file_name ? true : false
+    else
+      false
+    end
+  end
+
+  def cover_image?
+    if cover_images.first
+      cover_images.first.image_file_name ? true : false
+    else
+      false
+    end
   end
 end

@@ -14,20 +14,23 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @user.photos.build
+    @user.cover_images.build
+    @user.profile_images.build
   end
 
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
-    @photos = @user.photos.build unless @user.photos.exists?
+    @cover_image = @user.cover_images.build unless @user.cover_images.exists?
+    @profile_image = @user.profile_images.build unless @user.profile_images.exists?
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @photos = @user.photos
+    @cover_images = @user.cover_images
+    @profile_images = @user.profile_images
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -72,6 +75,8 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:username, :fullname, :photo, :coverimage, photos_attributes: %i[id image])
+    params.require(:user).permit(:username, :fullname, :photo, :coverimage,
+                                 cover_images_attributes: %i[id image image_type],
+                                 profile_images_attributes: %i[id image image_type])
   end
 end

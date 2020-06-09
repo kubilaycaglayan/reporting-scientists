@@ -10,5 +10,6 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.timestamps
     end
     add_foreign_key :photos, :users
+    add_column :photos, :image_type, :string, limit: 7, null: false, default: 'profile'
   end
 end

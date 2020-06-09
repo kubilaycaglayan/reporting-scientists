@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_06_08_150902) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_type", limit: 7, default: "profile", null: false
   end
 
   create_table "users", force: :cascade do |t|
