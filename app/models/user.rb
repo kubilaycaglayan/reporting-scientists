@@ -1,21 +1,23 @@
 class User < ApplicationRecord
-  # validations
   validates :username, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :fullname, length: { maximum: 50 }
 
-  # associations
-  has_many :following_followings, class_name: 'Following', foreign_key: 'follower_id'
+  has_many :following_followings, class_name: 'Following',
+                                  foreign_key: 'follower_id', dependent: :destroy
   has_many :followings, source: :following, through: :following_followings
 
-  has_many :following_followers, class_name: 'Following', foreign_key: 'followed_id'
+  has_many :following_followers, class_name: 'Following',
+                                 foreign_key: 'followed_id', dependent: :destroy
   has_many :followers, source: :follower, through: :following_followers
 
-  has_many :opinions, foreign_key: 'author_id'
+  has_many :opinions, foreign_key: 'author_id', dependent: :destroy
 
-  has_many :cover_images, -> { where(image_type: 'cover') }, inverse_of: :user, class_name: 'Photo'
+  has_many :cover_images, -> { where(image_type: 'cover') }, inverse_of: :user,
+                                                             class_name: 'Photo', dependent: :destroy
   accepts_nested_attributes_for :cover_images
 
-  has_many :profile_images, -> { where(image_type: 'profile') }, inverse_of: :user, class_name: 'Photo'
+  has_many :profile_images, -> { where(image_type: 'profile') },
+           inverse_of: :user, class_name: 'Photo', dependent: :destroy
   accepts_nested_attributes_for :profile_images
 
   # methods
