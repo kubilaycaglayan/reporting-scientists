@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new
     @user.cover_images.build
     @user.profile_images.build
+    render layout: 'welcome' unless signed_in?
   end
 
   # GET /users/1/edit

@@ -4,7 +4,7 @@ class OpinionsController < ApplicationController
   # GET /opinions
   # GET /opinions.json
   def index
-    @opinions = Opinion.all
+    @tweets = current_user.visible_opinions.includes(:user)
   end
 
   # GET /opinions/1

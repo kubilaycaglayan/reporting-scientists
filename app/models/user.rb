@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def visible_opinions
-    Opinion.where(id: followings.ids)
+    Opinion.where(id: followings.ids).order(id: :desc)
   end
 
   def unfollowings

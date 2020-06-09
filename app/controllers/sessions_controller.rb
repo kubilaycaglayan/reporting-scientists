@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout 'welcome'
+  
   def new
     if signed_in?
       redirect_to opinions_path
