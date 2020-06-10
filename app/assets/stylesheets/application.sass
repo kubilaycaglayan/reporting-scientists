@@ -32,6 +32,8 @@ html *
   .btn-primary
     background-color: $background_blue
     border-color: $background_blue
+  .text-primary
+    color: $background_blue !important
   a
     color: inherit
     text-decoration: none
@@ -53,17 +55,17 @@ body
     .prompt
       .invitation
         text-align: center
-        font-size: 7rem
+        font-size: 5rem
         color: $background_blue
         font-family: 'Sue Ellen Francisco', cursive
         background-color: $background_dark_blue
-        min-width: 800px
+        min-width: 600px
       .by_me
-        font-size: 1.2rem
+        font-size: 0.7rem
         color: white
         position: relative
         width: 450px
-        right: -400px
+        right: -300px
         top: -60px
         .fab
           font-size: 2rem
@@ -94,7 +96,7 @@ body
     color: $gray_text
     .media
       img
-        width: 35%
+        width: 25%
       .media-body
         display: block
         width: 70%
@@ -118,7 +120,7 @@ body
     .navigation
       text-align: left
       .link_to
-        font-size: 1rem
+        font-size: 0.9rem
         color: $gray_text
         a
           color: $gray_text
@@ -129,7 +131,7 @@ body
   .top_bar
     background-color: $background_blue
     z-index: 50
-    height: 90px
+    height: 60px
     position: fixed
     top: 0
     width: 100%
@@ -144,13 +146,13 @@ body
       #notice
         color: white
     .prompt
-      margin-right: 20%
+      margin-right: 24%
       font-family: 'Sue Ellen Francisco', cursive
-      font-size: 2.0rem
+      font-size: 1.6rem
       color: $background_dark_blue
   .right_bar
     background-color: $background_gray
-    padding-top: 6%
+    padding-top: 60px
     height: 100vh
     border-left: 1px solid gray
     position: fixed
@@ -159,6 +161,7 @@ body
     overflow: auto
     .who_to_follow
       h4
+        font-size: 1.3rem
         color: $gray_text
         border-bottom: black solid 1px
         background-color: $background_gray
@@ -187,12 +190,14 @@ body
           border-right: none
         .followers
           border-right: none
+      .followed_by
+          font-size: 1.0rem
     .followers
       img
         width: 50px
         height: 50px
   .mid-wrapper
-    padding-top: 90px
+    padding-top: 60px
     .ribbon
       color: $border_dark
       text-align: center
@@ -230,17 +235,17 @@ body
         margin-top: -5%
     .edit_user
       label
-        font-size: 1.5rem
+        font-size: 1rem
         text-align: center
         color: $success
       img
-        height: 25vh
+        width: 120px
       input
-        height: 2.5rem
-        font-size: 1.4rem
+        height: 1.5rem
+        font-size: 0.9rem
       .note
         p
-          font-size: 1.5rem
+          font-size: 1rem
     .scientists
       .card
         width: 100%
@@ -252,4 +257,11 @@ body
       label
         font-size: 1rem
       input
+        height: 1rem
+        font-size: 1.5rem
+        width: 75%
+      .btn
+        width: 50%
+        height: 3rem
+      .fas
         font-size: 1.5rem

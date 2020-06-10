@@ -2,7 +2,7 @@
 <div class="right_profile">
   <div class="d-flex align-items-center justify-content-center py-3">
     <%= image_tag @user.profile_images.first.image.url,
-     class: 'align-self-center rounded' %>
+     class: 'align-self-center rounded-circle' %>
   </div>
   <div class="text-center">
     <%= follow_button @user %>
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <h4 class="text-center mt-3" >FOLLOWED BY</h4>
+  <h4 class="text-center mt-3 followed_by" >FOLLOWED BY</h4>
 
   <%= render 'users/followers', followers: @user.followers %>
 

@@ -6,12 +6,9 @@
     <% end %>
   <% end %>
 </div>
-<div class="ribbon border-bottom border-dark py-4">
-  <h2>Reports</h2>
-</div>
 
 <% render 'users/right_profile' %>
 
-<%= render 'opinions/recent_tweets', tweets: @user.opinions %>
+<%= render 'opinions/recent_tweets', tweets: @user.opinions.order(id: :desc) %>
 
 </div>
