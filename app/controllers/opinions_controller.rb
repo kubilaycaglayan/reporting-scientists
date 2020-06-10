@@ -27,7 +27,7 @@ class OpinionsController < ApplicationController
 
     respond_to do |format|
       if @opinion.save
-        format.html { redirect_to opinions_path, notice: 'Opinion was successfully created.' }
+        format.html { redirect_to opinions_path, notice: 'Opinion created successfully.' }
         format.json { render :show, status: :created, location: @opinion }
       else
         format.html { render :new }

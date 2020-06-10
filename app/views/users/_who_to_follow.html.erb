@@ -1,21 +1,18 @@
 
 <% content_for :right do %>
-<div class="p-3 who_to_follow">
-  <h4>Who to follow</h4>
-
-  <% unfollowings.each do |unfollowing| %>
-  <div class="media my-3">
-    <%= follow_button unfollowing %> 
-    <%= image_tag unfollowing.profile_images.first.image.url,
-     class: 'align-self-center mr-3 rounded' %>
-  <div class="media-body">
-    <h5 class="mt-0">
-        <%= link_to "#{unfollowing.username}", user_path(unfollowing.id)%>
-
-
-    </div>
+  <div class="p-3 who_to_follow">
+    <h4 class="text-center py-3 sticky-top">WHO TO FOLLOW</h4>
+    <% unfollowings.each do |unfollowing| %>
+      <div class="media my-3">
+        <%= image_tag unfollowing.profile_images.first.image.url,
+         class: 'align-self-center mr-3 rounded' %>
+        <div class="media-body">
+          <h5 class="mt-0">
+              <%= link_to "#{unfollowing.username}", user_path(unfollowing.id)%>
+              <p><%= followed_by_notice unfollowing %></p>
+          </h5>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <% end %>
-</div>
 <% end %>

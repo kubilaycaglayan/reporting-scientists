@@ -58,4 +58,13 @@ class User < ApplicationRecord
       false
     end
   end
+
+  def followed_by(user)
+    shared_connections = followings - (followings - user.followers)
+    shared_connections -= [user]
+    shared_connections -= [self]
+    return false if shared_connections.empty?
+
+    shared_connections.first
+  end
 end

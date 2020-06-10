@@ -12,4 +12,12 @@ module UsersHelper
   def edit_button(user)
     render 'users/edit_button', user: user if current_user == user
   end
+
+  def followed_by_notice(user)
+    if current_user.followed_by(user)
+      render 'users/followed_by', user: current_user.followed_by(user)
+    else
+      'You can follow this user.'
+    end
+  end
 end

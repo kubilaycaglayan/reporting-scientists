@@ -7,9 +7,8 @@
     <link rel="icon" href="https://png.pngtree.com/png-clipart/20200225/original/pngtree-science-icon-png-image_5273869.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,400&display=swap');
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -19,11 +18,11 @@
 
     <div class="left_bar">
 
-      <div class="media p-4">
+      <div class="media p-4 current_user">
         <%= image_tag current_user.profile_images.first.image.url,
          class: 'align-self-center mr-3 rounded' %>
         <div class="media-body align-self-center">
-          <h5 class="mt-0 "><%= link_to "#{current_user.username}", user_path(current_user.id)%></h5>
+          <h5 class="mt-0"><%= link_to "#{current_user.username}", user_path(current_user.id)%></h5>
         </div>
       </div>
 
@@ -47,18 +46,18 @@
       <div class="container-fluid navigation p-0">
 
         <div class="link_to p-4">
-          <i class="fab fa-twitter"></i>
-          <%= link_to 'All Tweets', opinions_path,
+          <i class="fas fa-vials"></i>
+          <%= link_to 'All Reports', opinions_path,
           class: 'ml-2' %>
         </div>
         <div class="link_to p-4">
           <i class="fas fa-users"></i>
-          <%= link_to 'All Users', users_path,
+          <%= link_to 'Scientists', users_path,
           class: 'ml-2' %>
         </div>
         <div class="link_to p-4">
           <i class="fas fa-user-plus"></i>
-          <%= link_to 'New User', new_user_path,
+          <%= link_to 'New Scientist', new_user_path,
           class: 'ml-2' %>
         </div>
         <div class="link_to p-4">
@@ -75,11 +74,17 @@
     <div class="top_bar">
       <div class="wrapper d-flex align-items-center pl-4">
         <div class="top_logo">
-          <i class="fab fa-twitter"></i>
+          <i class="fas fa-vial"></i>
         </div>
-<p id="notice"><%= notice %></p>
+        <div class="notice ml-4 pt-3">
+          <p id="notice"><%= notice %></p>
+        </div>
+        <div class="prompt ml-auto mr-5 pr-3">
+          Chirping Scientists
+        </div>
       </div>
       <%= yield :top %>
+
     </div>
 
     <div class="right_bar">

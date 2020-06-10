@@ -14,12 +14,19 @@
 
   <div class="field">
     <%= form.label "Sign in with username:", class: 'mb-3 text-center' %>
-    <%= form.text_field :username, required: true, class: 'pl-2' %>
+    <%= form.text_field :username, required: true, class: 'pl-2 py-4' %>
+  </div>
+  <div class="note">
+    <p>Welcome to Chirping Scientists</p>
   </div>
 
 
-  <div class="actions text-center">
+  <div class="actions d-flex justify-content-center align-items-center pr-5 mt-4">
+    <i class="fas fa-sign-in-alt text-success px-3"></i>
     <%= form.submit 'Sign In', class: 'btn btn-success p-0 px-3' %>
   </div>
 <% end %>
+<div class="d-flex justify-content-center align-items-center pr-5">
+<i class="fas fa-user-plus text-primary px-3"></i>
       <%= link_to 'Sign Up', new_user_path, class: 'btn btn-primary text-white' %>
+</div>

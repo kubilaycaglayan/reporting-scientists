@@ -5,11 +5,12 @@
     <div class="media my-3">
       <%= image_tag tweet.user.profile_images.first.image.url,
        class: 'align-self-center mr-3 rounded' %>
-    <div class="media-body">
-      <h5 class="mt-0">
-<%= link_to "#{tweet.user.username}", user_path(tweet.user.id)%>
-</h5>
-      <p>  <%= tweet.text %> </p>
+      <div class="media-body pt-2">
+        <h5 class="mt-0 d-inline">
+          <%= link_to "#{tweet.user.username}", user_path(tweet.user.id)%>
+        </h5>
+        <span class="time_ago"> <%= time_ago_in_words(tweet.created_at) %> </span>
+        <p class="tweet pt-2">  <%= tweet.text %> </p>
       </div>
     </div>
   <% end %>

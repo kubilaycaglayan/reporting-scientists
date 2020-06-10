@@ -3,9 +3,11 @@
   <div class="media my-3">
     <%= image_tag follower.profile_images.first.image.url,
      class: 'align-self-center mr-3 rounded' %>
-  <div class="media-body">
-    <h5 class="mt-0">
-        <%= link_to "#{follower.username}", user_path(follower.id)%>
+    <div class="media-body">
+      <h5 class="mt-0">
+          <%= link_to "#{follower.fullname}", user_path(follower.id)%>
+      </h5>
+      <p>@<%= follower.username %> </p>
     </div>
   </div>
   <% end %>

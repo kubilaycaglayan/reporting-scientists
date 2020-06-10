@@ -63,7 +63,11 @@ names.size.times do |index|
   Following.create(follower_id: 12, followed_id: index + 7)
 end
 
-["Hello!", "How are you guys?", "let's have some fun!", "Please follow my lead", "Is there anything you want to add?", "Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey "]. each do |tweet|
+["Hello!", "How are you guys?", "let's have some fun!", "Please follow my lead",
+  "Is there anything you want to add?",
+  "Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey Hey ",
+  "Give me a text that is exactly representing the 140 character limits. Which we had
+  back in time when twitter first established. Back in t"]. each do |tweet|
   Opinion.create(author_id: 1, text: tweet)
   Opinion.create(author_id: 2, text: tweet)
 end

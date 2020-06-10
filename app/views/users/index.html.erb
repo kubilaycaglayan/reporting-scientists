@@ -1,6 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="ribbon py-3 sticky-top pl-0">
+  <h2 class="text-center pt-2 pl-5">Scientists</h2>
+</div>
 
-<h1>Users</h1>
+<div class="scientists d-flex flex-wrap justify-content-between mr-5">
+  <% @users.each do |user| %>
+
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <%= image_tag user.profile_images.first.image.url,
+         class: 'card-img-top' %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title text-wrap">
+              <%= user.fullname %> <br>
+              @<%= user.username %></p>
+            </h5>
+
+            <div class="text-center ml-auto">
+              <%= link_to 'Profile', user, class:'btn btn-primary text-white ml-auto' %>
+              <%= follow_button user %>
+              <%= edit_button user %>
+            </div>
+          </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex">
+            <span>Tweets: </span>
+            <span class="ml-auto"><%= user.opinions.count %></span>
+          </li>
+          <li class="list-group-item d-flex">
+            <span>Followings:</span>
+            <span class="ml-auto"><%= user.followings.count %></span>
+          </li>
+          <li class="list-group-item d-flex">
+            <span>Followers:</span>
+            <span class="ml-auto"><%= user.followers.count %></span>
+          </li>
+        </ul>
+      <h5 class="text-center">Latest tweet:</h5>
+        <p class="card-text text-center">"<%= last_tweet user %>"</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <% end %>
+</div>
+
 
 <table>
   <thead>
