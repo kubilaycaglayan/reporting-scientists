@@ -4,6 +4,7 @@ class OpinionsController < ApplicationController
   def index
     @tweets = current_user.visible_opinions.includes(:user)
     @opinion = current_user.opinions.build
+    @comment = current_user.comments.build
   end
 
   def new

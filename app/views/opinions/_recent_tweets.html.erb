@@ -4,14 +4,29 @@
   <% tweets.each do |tweet| %>
     <div class="media my-3 bg-white p-2 rounded shadow">
       <%= image_tag tweet.user.profile_images.first.image.url,
-       class: 'align-self-center mr-3 rounded-circle' %>
-      <div class="media-body pt-2">
+       class: 'align-self-start mr-3 rounded-circle' %>
+
+      <div class="media-body pt-2 px-2">
         <h5 class="mt-0 d-inline">
           <%= link_to "#{tweet.user.username}", user_path(tweet.user.id)%>
         </h5>
         <span class="time_ago"> <%= time_ago_in_words(tweet.created_at) %> </span>
         <p class="tweet pt-2">  <%= tweet.text %> </p>
+
+        <div class="comment_section mt-3">
+          <div class="create_comment text-center">
+          <%= form_for @comment do |form| %>
+            <%= form.submit 'Comment', class: 'btn-primary rounded px-2 py-1' %>
+            <%= form.text_field :content, class: 'w-75 pl-2 py-1',
+             required: true, spellcheck: false %>
+            <%= form.text_field :opinion_id, value: tweet.id, hidden: true %>
+          <% end %>
+          </div>
+          <%= show_comments tweet %>
+
+        </div>
       </div>
+
     </div>
   <% end %>
 </div>
