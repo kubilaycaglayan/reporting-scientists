@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  before_action :check_authorization, except: %i[new edit create]
   before_action :set_user, only: %i[show edit update destroy]
-  before_action :check_authorization, except: %i[new edit]
 
   def index
     @users = User.all.order(id: :desc).includes(:opinions, :profile_images, :followings, :followers)
@@ -67,6 +67,10 @@ class UsersController < ApplicationController
   private
 
   def set_user
+    if params[:id].to_i > User.last.id.to_i
+      redirect_to root_path
+      return
+    end
     @user = User.find(params[:id])
   end
 
