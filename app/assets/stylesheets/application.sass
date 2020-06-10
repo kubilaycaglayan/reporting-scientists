@@ -52,17 +52,18 @@ body
       font-size: 20px
     .prompt
       .invitation
-        font-size: 10rem
+        text-align: center
+        font-size: 7rem
         color: $background_blue
         font-family: 'Sue Ellen Francisco', cursive
         background-color: $background_dark_blue
-        min-width: 930px
+        min-width: 800px
       .by_me
         font-size: 1.2rem
         color: white
         position: relative
         width: 450px
-        right: -450px
+        right: -400px
         top: -60px
         .fab
           font-size: 2rem
@@ -85,10 +86,10 @@ body
     z-index: 99
     position: fixed
     top: 0
-    min-width: 250px
+    left: 0
+    bottom: 0
     width: 16%
     height: 100vh
-    float: left
     background-color: $background_dark_blue
     color: $gray_text
     .media
@@ -107,15 +108,17 @@ body
             color: white
     .stats
       p
-        font-size: 25px
+        font-size: 1.3rem
         padding: 3% 0
         color: $light_gray_text
       .col-6
         border: 1px solid $border_dark
+      h5
+        font-size: 0.8rem
     .navigation
       text-align: left
       .link_to
-        font-size: 22px
+        font-size: 1rem
         color: $gray_text
         a
           color: $gray_text
@@ -124,14 +127,14 @@ body
             color: white
             text-decoration: none
   .top_bar
-    z-index: 50
-    padding-left: 18%
-    width: 100%
-    height: 10vh
-    min-height: 70px
     background-color: $background_blue
+    z-index: 50
+    height: 90px
     position: fixed
+    top: 0
+    width: 100%
     .wrapper
+      width: 100%
       height: 100%
     .top_logo
       font-size: 40px
@@ -141,12 +144,13 @@ body
       #notice
         color: white
     .prompt
+      margin-right: 20%
       font-family: 'Sue Ellen Francisco', cursive
-      font-size: 2.4rem
+      font-size: 2.0rem
       color: $background_dark_blue
   .right_bar
-    padding-top: 5%
-    width: 20%
+    background-color: $background_gray
+    padding-top: 6%
     height: 100vh
     border-left: 1px solid gray
     position: fixed
@@ -173,7 +177,7 @@ body
         border: 1px $gray_text solid
       .stats
         h5
-          font-size: 1rem
+          font-size: 0.7rem
         p
           font-size: 1.3rem
         .tweets
@@ -188,14 +192,13 @@ body
         width: 50px
         height: 50px
   .mid-wrapper
-    width: 80%
-    padding-top: 4.5%
-    padding-left: 19%
+    padding-top: 90px
     .ribbon
-      margin-left: -19%
-      padding-left: 19%
+      color: $border_dark
+      text-align: center
     .recent_tweets,
     .your_tweet
+      width: 100%
       .media
         h5
           a
@@ -220,8 +223,7 @@ body
         padding: 1rem
         outline: none
     .cover_image
-      height: 40vh
-      margin-left: -19%
+      height: 300px
       overflow: hidden
       img
         width: 100%

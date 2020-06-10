@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chirping Scientists</title>
+    <title>Reporting Scientists</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="icon" href="https://png.pngtree.com/png-clipart/20200225/original/pngtree-science-icon-png-image_5273869.jpg">
@@ -16,86 +16,116 @@
 
   <body>
 
-    <div class="left_bar">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-2 m-0 p-0">
+        <!-- left_bar -->
+        <div class="left_bar">
 
-      <div class="media p-4 current_user d-flex">
-        <%= image_tag current_user.profile_images.first.image.url,
-         class: 'align-self-center mr-3 rounded' %>
-        <div class="media-body align-self-center text-break text-wrap">
-          <%= link_to "#{current_user.username}",
-            user_path(current_user.id), class: 'text-break text-center text-wrap'%>
+            <div class="media p-4 current_user d-flex">
+              <%= image_tag current_user.profile_images.first.image.url,
+               class: 'align-self-center mr-3 rounded' %>
+              <div class="media-body align-self-center text-break text-wrap">
+                <%= link_to "#{current_user.username}",
+                  user_path(current_user.id), class: 'text-break text-center text-wrap'%>
+              </div>
+            </div>
+
+            <div class="container-fluid m-0 p-0 stats">
+              <div class="row m-0 p-0">
+                <div class="col-6 py-4">
+                  <p class="text-center">
+                    <%= current_user.followings.count %>
+                  </p>
+                  <h5 class="text-center">Following</h5>
+                </div>
+                <div class="col-6 py-4">
+                  <p class="text-center">
+                    <%= current_user.followers.count %>
+                  </p>
+                  <h5 class="text-center">Followers</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="container-fluid navigation p-0">
+
+              <div class="link_to p-4">
+                <i class="fas fa-vials"></i>
+                <%= link_to 'All Reports', opinions_path,
+                class: 'ml-2' %>
+              </div>
+              <div class="link_to p-4">
+                <i class="fas fa-users"></i>
+                <%= link_to 'Scientists', users_path,
+                class: 'ml-2' %>
+              </div>
+              <div class="link_to p-4">
+                <i class="fas fa-user-plus"></i>
+                <%= link_to 'New Scientist', new_user_path,
+                class: 'ml-2' %>
+              </div>
+              <div class="link_to p-4">
+                <i class="fas fa-sign-out-alt"></i>
+                <%= link_to "Sign Out", session_path(session[:current_user_id]),
+                method: :delete, class: 'ml-2' %>
+              </div>
+            </div>
+
+            <%= yield :left %>
+
         </div>
       </div>
+      <div class="col-10 m-0 p-0">
+        <!-- top_bar && mid_wrapper && right_bar -->
+        <div class="row">
+          <div class="col-12 p-0 m-0">
+            <!-- top_bar -->
+            <div class="top_bar mb-0">
+              <div class="wrapper d-flex align-items-center mb-0">
+                <div class="top_logo ml-4">
+                  <i class="fas fa-vial"></i>
+                </div>
+                <div class="notice ml-3">
+                  <p id="notice"><%= notice %></p>
+                </div>
+                <div class="prompt ml-auto">
+                  Reporting Scientists
+                </div>
+              </div>
+              <%= yield :top %>
 
-      <div class="container-fluid m-0 p-0 stats">
-        <div class="row m-0 p-0">
-          <div class="col-6 py-4">
-            <p class="text-center">
-              <%= current_user.followings.count %>
-            </p>
-            <h5 class="text-center">Following</h5>
+            </div>
           </div>
-          <div class="col-6 py-4">
-            <p class="text-center">
-              <%= current_user.followers.count %>
-            </p>
-            <h5 class="text-center">Followers</h5>
-          </div>
         </div>
+
+        <div class="row">
+          <!-- mid_wrapper && right_bar -->
+
+            <!-- mid_wrapper -->
+            <div class="col-9 mid-wrapper pl-0 pr-5 pb-0">
+              <%= yield  %>
+            </div>
+
+            <!-- right_bar -->
+            <div class="col-3 m-0 right_bar m-0 pr-0 pl-0">
+              <%= yield :right %>
+            </div>
+
+        </div>
+
       </div>
-
-      <div class="container-fluid navigation p-0">
-
-        <div class="link_to p-4">
-          <i class="fas fa-vials"></i>
-          <%= link_to 'All Reports', opinions_path,
-          class: 'ml-2' %>
-        </div>
-        <div class="link_to p-4">
-          <i class="fas fa-users"></i>
-          <%= link_to 'Scientists', users_path,
-          class: 'ml-2' %>
-        </div>
-        <div class="link_to p-4">
-          <i class="fas fa-user-plus"></i>
-          <%= link_to 'New Scientist', new_user_path,
-          class: 'ml-2' %>
-        </div>
-        <div class="link_to p-4">
-          <i class="fas fa-sign-out-alt"></i>
-          <%= link_to "Sign Out", session_path(session[:current_user_id]),
-          method: :delete, class: 'ml-2' %>
-        </div>
-      </div>
-
-      <%= yield :left %>
-
     </div>
+  </div>
 
-    <div class="top_bar">
-      <div class="wrapper d-flex align-items-center pl-4">
-        <div class="top_logo">
-          <i class="fas fa-vial"></i>
-        </div>
-        <div class="notice ml-4 pt-3">
-          <p id="notice"><%= notice %></p>
-        </div>
-        <div class="prompt ml-auto mr-5 pr-3">
-          Chirping Scientists
-        </div>
-      </div>
-      <%= yield :top %>
 
-    </div>
 
-    <div class="right_bar">
-      <%= yield :right %>
-    </div>
 
-    <div class="mid-wrapper d-flex flex-column">
 
-      <%= yield  %>
-    </div>
+
+
+
+
 
   </body>
 </html>
