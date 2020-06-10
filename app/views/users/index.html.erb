@@ -39,9 +39,10 @@
             <span class="ml-auto"><%= user.followers.count %></span>
           </li>
         </ul>
-      <h5 class="text-center">Latest Report:</h5>
-        <p class="card-text text-center">"<%= last_tweet user %>"</p>
-
+        <h5 class="text-center">Latest Report:</h5>
+        <div class="latest p-3">
+          <p class="card-text text-center">"<%= last_tweet user %>"</p>
+        </div>
         </div>
       </div>
     </div>

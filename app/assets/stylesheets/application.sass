@@ -91,15 +91,20 @@ body
     float: left
     background-color: $background_dark_blue
     color: $gray_text
-    .current_user
-      h5
-        a
-          color: $light_gray_text
-          &:hover
-            color: white
     .media
       img
         width: 35%
+      .media-body
+        display: block
+        width: 70%
+        a
+          font-size: 1.2rem
+          color: $light_gray_text
+          word-wrap: break-word
+          text-wrap: true
+          overflow-wrap: break-word
+          &:hover
+            color: white
     .stats
       p
         font-size: 25px
@@ -157,11 +162,18 @@ body
         width: 50px
         height: 50px
     .right_profile
+      h4
+        width: 100%
+        word-wrap: break-word
+        text-wrap: true
+        overflow-wrap: break-word
       img
         width: 100px
       .col-4
         border: 1px $gray_text solid
       .stats
+        h5
+          font-size: 1rem
         p
           font-size: 1.3rem
         .tweets
@@ -231,6 +243,8 @@ body
       .card
         width: 100%
         img
+        .latest
+          margin-top: 3%
     .create_new_scientist
       margin-top: 5%
       label

@@ -18,11 +18,12 @@
 
     <div class="left_bar">
 
-      <div class="media p-4 current_user">
+      <div class="media p-4 current_user d-flex">
         <%= image_tag current_user.profile_images.first.image.url,
          class: 'align-self-center mr-3 rounded' %>
-        <div class="media-body align-self-center">
-          <h5 class="mt-0"><%= link_to "#{current_user.username}", user_path(current_user.id)%></h5>
+        <div class="media-body align-self-center text-break text-wrap">
+          <%= link_to "#{current_user.username}",
+            user_path(current_user.id), class: 'text-break text-center text-wrap'%>
         </div>
       </div>
 
