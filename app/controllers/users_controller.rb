@@ -1,20 +1,16 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :check_authorization, except: %i[new edit]
 
-  # GET /users
-  # GET /users.json
   def index
     @users = User.all.order(id: :desc).includes(:opinions, :profile_images, :followings, :followers)
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
     @user = User.find(params[:id])
     @followers = @user.followers.includes(:profile_images)
   end
 
-  # GET /users/new
   def new
     @user = User.new
     @user.cover_images.build
@@ -22,7 +18,6 @@ class UsersController < ApplicationController
     render layout: 'welcome' unless signed_in?
   end
 
-  # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
     @cover_image = @user.cover_images.build unless @user.cover_images.exists?
@@ -30,8 +25,6 @@ class UsersController < ApplicationController
     render 'users/edit_form'
   end
 
-  # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
 
@@ -52,22 +45,17 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update(user_params)
+      flash[:notice] = 'Edit successful.'
+      sign_in @user
+      redirect_to user_path @user
+    else
+      flash[:notice] = "Edit wasn't successful."
+      redirect_to edit_user_path(@user)
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
@@ -78,12 +66,10 @@ class UsersController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def user_params
     params.require(:user).permit(:username, :fullname, :photo, :coverimage,
                                  cover_images_attributes: %i[id image image_type],
