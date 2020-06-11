@@ -47,7 +47,6 @@ class User < ApplicationRecord
 
   def visible_opinions
     ids = followings.ids << id
-    p ids
     Opinion.where(author_id: ids).order(id: :desc)
   end
 
