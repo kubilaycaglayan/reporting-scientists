@@ -5,7 +5,7 @@
     <% unfollowings.each do |unfollowing| %>
       <div class="media my-3">
         <%= image_tag unfollowing.profile_images.first.image.url,
-         class: 'align-self-center mr-3 rounded' %>
+         class: 'align-self-center mr-3 rounded-circle' %>
         <div class="media-body">
           <h5 class="mt-0">
               <%= link_to "#{unfollowing.username}", user_path(unfollowing.id)%>

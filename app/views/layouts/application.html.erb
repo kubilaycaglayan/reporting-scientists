@@ -39,7 +39,7 @@
                   </p>
                   <h5 class="text-center">Following</h5>
                 </div>
-                <div class="col-6 py-4">
+                <div class="col-6 py-4 followers">
                   <p class="text-center">
                     <%= current_user.followers.count %>
                   </p>
@@ -70,13 +70,17 @@
                 <%= link_to "Sign Out", session_path(session[:current_user_id]),
                 method: :delete, class: 'ml-1' %>
               </div>
+              <div class="link_to p-3">
+                <i class="fas fa-user-cog"></i>
+                <%= link_to "My Page", user_path(current_user.id), class: 'ml-1' %>
+              </div>
             </div>
 
             <%= yield :left %>
 
         </div>
       </div>
-      <div class="col-10 m-0 p-0">
+      <div class="col-10 m-0 p-0 overflow-hidden">
         <!-- top_bar && mid_wrapper && right_bar -->
         <div class="row">
           <div class="col-12 p-0 m-0">
@@ -123,15 +127,5 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
   </body>
 </html>
