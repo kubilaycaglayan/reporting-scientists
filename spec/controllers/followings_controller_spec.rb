@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Sessions Controller', type: :feature do
+RSpec.describe 'Followings Controller', type: :feature do
   before :each do
     user = User.initialize_with_images(username: 'kubi', fullname: 'kc')
     user.save
@@ -13,7 +13,7 @@ RSpec.describe 'Sessions Controller', type: :feature do
     click_button 'Sign In'
   end
 
-  describe 'controller actions' do
+  describe 'actions' do
     it 'follows a user' do
       click_link 'vera'
       click_link 'Follow'
@@ -23,7 +23,7 @@ RSpec.describe 'Sessions Controller', type: :feature do
     it 'unfollows a user' do
       click_link 'vera'
       click_link 'Follow'
-      click_link 'Unollow'
+      click_link 'Unfollow'
       expect(page).to have_content('Follow')
     end
   end
