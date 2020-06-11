@@ -1,11 +1,10 @@
 <div class="comments mt-1 pl-4">
   <% comments.each do |comment| %>
-
-  <div class="media my-2">
-    <%= image_tag comment.user.profile_images.first.image.url,
-     class: 'align-self-end mr-3 rounded-circle' %>
-    <div class="media-body">
-      <div>
+    <div class="media my-2">
+      <%= image_tag comment.user.profile_images.first.image.url,
+       class: 'align-self-end mr-3 rounded-circle' %>
+      <div class="media-body">
+        <div>
           <p class="d-flex justify-content-end align-items-center">
             <span class="text-muted">
               <%= link_to "#{comment.user.username}", user_path(comment.user.id) %>
@@ -15,15 +14,10 @@
                <%= time_ago_in_words(comment.created_at) %>
                ago
             </span>
-             </p>
-             <span> <%= comment.content %> </span>
+          </p>
+          <span> <%= comment.content %> </span>
+        </div>
       </div>
-  </div>
-</div>
-
-
-
-
-
+    </div>
   <% end %>
 </div>
