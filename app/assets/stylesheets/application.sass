@@ -122,8 +122,16 @@ body
     .navigation
       text-align: left
       .link_to
-        font-size: 0.9rem
+        font-size: 0.7rem
         color: $gray_text
+        @media screen and (min-width: 1050px)
+          font-size: 0.9rem
+        @media screen and (min-width: 1150px)
+          font-size: 1rem
+        @media screen and (min-width: 1250px)
+          font-size: 1.1rem
+        @media screen and (min-width: 1300px)
+          font-size: 1.2rem
         a
           color: $gray_text
           &:hover
@@ -167,6 +175,11 @@ body
         color: $gray_text
         border-bottom: black solid 1px
         background-color: $background_gray
+      .followed_by_notice
+        font-size: 1rem
+        width: 90%
+        p
+          font-size: 0.8rem
       img
         width: 50px
         height: 50px

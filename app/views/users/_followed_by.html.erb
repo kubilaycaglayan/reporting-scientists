@@ -1,1 +1,6 @@
-<span class="text-muted">Followed by <span class="text-primary"> <%= user.username %> </span> </span>
+<span class="text-muted text-wrap word-break">
+  Followed by
+  <span class="text-primary">
+    <%= link_to "#{user.username}", user_path(user.id) %>
+  </span>
+</span>

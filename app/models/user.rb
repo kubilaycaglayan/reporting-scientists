@@ -21,6 +21,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile_images
 
   has_many :comments
+
   def follow(user)
     Following.create(follower_id: id, followed_id: user.id)
   end
@@ -66,6 +67,6 @@ class User < ApplicationRecord
     shared_connections -= [self]
     return false if shared_connections.empty?
 
-    shared_connections.first
+    shared_connections.sample
   end
 end
