@@ -33,7 +33,7 @@ html *
     background-color: $background_blue
     border-color: $background_blue
   .text-primary
-    color: $background_blue !important
+    color: $background_dark_blue !important
   a
     color: inherit
     text-decoration: none
@@ -171,15 +171,20 @@ body
     overflow: auto
     .who_to_follow
       h4
-        font-size: 1.3rem
+        font-size: 2vw
         color: $gray_text
         border-bottom: black solid 1px
         background-color: $background_gray
       .followed_by_notice
-        font-size: 1rem
+        font-size: 1vw
         width: 90%
         p
-          font-size: 0.8rem
+          font-size: 0.8vw
+          span
+            .followed_by
+              color: red
+      .btn
+        font-size: 1vw
       img
         width: 50px
         height: 50px
@@ -189,6 +194,7 @@ body
         word-wrap: break-word
         text-wrap: true
         overflow-wrap: break-word
+        font-size: 1.7vw
       img
         width: 100px
       .col-4
@@ -206,7 +212,7 @@ body
         .followers
           border-right: none
       .followed_by
-          font-size: 1.0rem
+          font-size: 1vw
     .followers
       img
         width: 50px
@@ -275,6 +281,9 @@ body
           height: 110px
         .latest
           margin-top: 3%
+        .card-body
+          h5
+            font-size: 1.5vw
     .create_new_scientist
       margin-top: 5%
       label

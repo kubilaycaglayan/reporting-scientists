@@ -7,10 +7,13 @@
         <%= image_tag unfollowing.profile_images.first.image.url,
          class: 'align-self-center mr-3 rounded-circle' %>
         <div class="media-body">
-          <div class="mt-0 followed_by_notice text-wrap text-break">
+          <div class="mt-0 followed_by_notice text-wrap text-break text-muted">
               <%= link_to "#{unfollowing.username}", user_path(unfollowing.id)%>
               <p><%= followed_by_notice unfollowing %></p>
           </div>
+        </div>
+        <div class="align-self-center text-muted">
+          <%= follow_button(unfollowing) %>
         </div>
       </div>
     <% end %>

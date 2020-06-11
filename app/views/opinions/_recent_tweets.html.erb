@@ -14,10 +14,10 @@
         <p class="tweet pt-2">  <%= tweet.text %> </p>
 
         <div class="comment_section mt-3">
-          <div class="create_comment text-center">
+          <div class="create_comment text-left">
           <%= form_for @comment do |form| %>
             <%= form.submit 'Comment', class: 'comment-submit btn-primary rounded px-2 py-1' %>
-            <%= form.text_field :content, class: 'w-75 pl-2 py-1',
+            <%= form.text_field :content, class: 'w-75 pl-2 py-1 ml-3',
              required: true, spellcheck: false %>
             <%= form.text_field :opinion_id, value: tweet.id, hidden: true %>
           <% end %>
