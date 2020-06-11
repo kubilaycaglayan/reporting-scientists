@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
-  let(:user) { User.create(username: 'kubi', fullname: 'kubilay caglayan')}
+  let(:user) { User.create(username: 'kubi', fullname: 'kubilay caglayan') }
   let(:opinion) { Opinion.new(text: 'Hi', author_id: user.id) }
 
   describe 'validations' do

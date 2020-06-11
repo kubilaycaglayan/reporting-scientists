@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  let(:user) { User.create(username: 'kubi', fullname: 'kubilay caglayan')}
+  let(:user) { User.create(username: 'kubi', fullname: 'kubilay caglayan') }
   let(:opinion) { Opinion.create(text: 'Hi', author_id: user.id) }
   let(:comment) { Comment.new(user_id: user.id, opinion_id: opinion.id, content: 'Hi') }
 

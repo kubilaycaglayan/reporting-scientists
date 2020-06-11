@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-  let(:user) {
-    User.initialize_with_images( {username: 'kubi', fullname: 'kubilay caglayan'} )
-  }
+  let(:user) do
+    User.initialize_with_images({ username: 'kubi', fullname: 'kubilay caglayan' })
+  end
   let(:photo) { user.profile_images.first }
 
   describe 'associations' do
