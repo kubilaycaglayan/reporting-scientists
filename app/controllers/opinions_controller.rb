@@ -2,7 +2,7 @@ class OpinionsController < ApplicationController
   before_action :check_authorization
 
   def index
-    @tweets = current_user.visible_opinions.includes(:user)
+    @tweets = current_user.visible_opinions.includes(:user, :comments)
     @opinion = current_user.opinions.build
     @comment = current_user.comments.build
   end

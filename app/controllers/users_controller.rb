@@ -27,16 +27,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.initialize_with_images(user_params)
 
-    photo_cover = Photo.new(user_id: @user.id, image_type: 'cover')
-    photo_cover.image = URI.parse('https://ak.picdn.net/shutterstock/videos/12243746/thumb/1.jpg')
-
-    photo_profile = Photo.new(user_id: @user.id, image_type: 'profile')
-    photo_profile.image = URI.parse('https://cdn.iconscout.com/icon/free/png-512/avatar-372-456324.png')
-
-    @user.cover_images << photo_cover
-    @user.profile_images << photo_profile
     if @user.save
       sign_in @user
       redirect_to @user, notice: 'User was successfully created.'

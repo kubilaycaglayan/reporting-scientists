@@ -33,6 +33,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Unit testing
+  gem 'capybara'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'

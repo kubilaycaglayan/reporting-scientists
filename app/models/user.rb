@@ -22,6 +22,17 @@ class User < ApplicationRecord
 
   has_many :comments
 
+  def self.initialize_with_images(user_params)
+    @user = User.new(user_params)
+    photo_cover = Photo.new(user_id: @user.id, image_type: 'cover')
+    photo_cover.image = URI.parse('https://ak.picdn.net/shutterstock/videos/12243746/thumb/1.jpg')
+    photo_profile = Photo.new(user_id: @user.id, image_type: 'profile')
+    photo_profile.image = URI.parse('https://cdn.iconscout.com/icon/free/png-512/avatar-372-456324.png')
+    @user.cover_images << photo_cover
+    @user.profile_images << photo_profile
+    @user
+  end
+
   def follow(user)
     Following.create(follower_id: id, followed_id: user.id)
   end
