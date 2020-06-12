@@ -50,10 +50,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    id = current_user.id
-    sign_out
-    User.find(id).destroy
-    flash[:notice] = 'Acount deleted'
+    user = current_user
+    if user.destroy
+      sign_out
+      flash[:notice] = 'Acount deleted'
+    else
+      flash[:notice] = "Acount delete wasn't successful."
+    end
     redirect_to root_path
   end
 
