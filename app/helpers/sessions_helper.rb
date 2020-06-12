@@ -26,5 +26,6 @@ module SessionsHelper
 
   def sign_out
     session[:current_user_id] = nil
+    true
   end
 end

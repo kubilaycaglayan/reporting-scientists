@@ -23,8 +23,11 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    flash[:notice] = 'Logout successful.'
-    sign_out
+    flash[:notice] = if sign_out
+                       'Logout successful.'
+                     else
+                       'Logout was not successful.'
+                     end
     redirect_to root_path
   end
 end
