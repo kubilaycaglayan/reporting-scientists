@@ -20,7 +20,7 @@ class User < ApplicationRecord
            inverse_of: :user, class_name: 'Photo', dependent: :destroy
   accepts_nested_attributes_for :profile_images
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   def self.initialize_with_images(user_params)
     @user = User.new(user_params)
