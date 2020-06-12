@@ -55,7 +55,7 @@
               </div>
               <div class="link_to p-3">
                 <i class="fas fa-vials"></i>
-                <%= link_to 'ALL REPORTS', opinions_path,
+                <%= link_to 'REPORTS', opinions_path,
                 class: 'ml-1' %>
               </div>
               <div class="link_to p-3">
@@ -63,13 +63,8 @@
                 <%= link_to 'SCIENTISTS', users_path,
                 class: 'ml-1' %>
               </div>
-              <div class="link_to  p-3">
-                <i class="fas fa-user-plus"></i>
-                <%= link_to 'NEW SCIENTIST', new_user_path,
-                class: 'ml-1 new_scientist' %>
-              </div>
               <div class="link_to p-3">
-                <i class="fas fa-sign-out-alt"></i>
+                <i class="fas fa-sign-out-alt pl-1"></i>
                 <%= link_to "SIGN OUT", session_path(session[:current_user_id]),
                 method: :delete, class: 'ml-1' %>
               </div>
