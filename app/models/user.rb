@@ -34,11 +34,18 @@ class User < ApplicationRecord
   end
 
   def follow(user)
-    Following.create(follower_id: id, followed_id: user.id)
+    following = Following.new(follower_id: id, followed_id: user.id)
+    following.save
+    true
+  rescue StandardError
+    false
   end
 
   def unfollow(user)
     Following.where(follower_id: id, followed_id: user.id).first.destroy
+    true
+  rescue StandardError
+    false
   end
 
   def following?(user)
