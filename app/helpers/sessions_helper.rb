@@ -9,6 +9,9 @@ module SessionsHelper
 
   def current_user
     signed_in? ? User.find(session[:current_user_id]) : nil
+  rescue StandardError
+    session[:current_user_id] = nil
+    flash[:notice] = 'This user has been removed.'
   end
 
   def sign_in(user)
