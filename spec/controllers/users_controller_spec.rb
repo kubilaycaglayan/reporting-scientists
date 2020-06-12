@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Sessions Controller', type: :feature do
+RSpec.describe 'Users Controller', type: :feature do
   before :each do
     user = User.initialize_with_images(username: 'kubi', fullname: 'kc')
     user.save
@@ -25,11 +25,6 @@ RSpec.describe 'Sessions Controller', type: :feature do
       expect(page).to have_content('vc')
     end
 
-    it 'shows a create new user page' do
-      click_link 'NEW SCIENTIST'
-      expect(page).to have_button('Create User and Sign In')
-    end
-
     it 'shows an edit page' do
       click_link 'PROFILE'
       click_link 'Edit'
@@ -37,7 +32,8 @@ RSpec.describe 'Sessions Controller', type: :feature do
     end
 
     it 'creates a new user' do
-      click_link 'NEW SCIENTIST'
+      click_link 'SIGN OUT'
+      click_link 'Sign Up'
       fill_in 'user[username]', with: 'new user'
       fill_in 'user[fullname]', with: 'definitely'
       click_button 'Create User and Sign In'
