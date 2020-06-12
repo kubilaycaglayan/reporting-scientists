@@ -1,8 +1,9 @@
 <% content_for :right do %>
-  <div class="my-5 mx-auto W-100">
-    <div class="btn btn-danger mx-auto my-5">
-      <%# <%= link_to 'Delete My Account',  %>
-      DELETE
+  <div class="my-5 mx-auto W-100 text-center">
+    <div class="btn btn-danger mx-auto my-5 text-center">
+      <%= link_to 'Delete My Account', user_path(current_user.id),
+      class: 'text-white mx-auto my-5', method: :delete,
+      data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
 <% end %>
