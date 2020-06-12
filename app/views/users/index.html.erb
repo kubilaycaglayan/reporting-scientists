@@ -2,28 +2,28 @@
 <div class="ribbon mt-4">
   <h2 class="text-center">Scientists</h2>
 </div>
-<div class="scientists d-flex flex-wrap justify-content-between mx-auto px-3">
+<div class="scientists d-flex flex-wrap justify-content-between mx-auto px-4 mb-5">
   <% @users.each do |user| %>
-    <div class="card mx-auto my-2" style="width: 15rem;">
+    <div class="card mx-auto my-2 shadow" style="width: 15rem;">
       <%= image_tag user.profile_images.first.image.url,
        class: 'card-img-top rounded-circle mx-auto mt-2' %>
         <div class="card-body d-flex flex-column justify-content-around">
           <div>
-            <h5 class="card-title text-wrap text-center">
+            <h5 class="card-title text-wrap text-center my-0">
               <%= user.fullname %> <br>
               @<%= user.username %>
             </h5>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex">
+            <li class="list-group-item d-flex my-0">
               <span>Reports: </span>
               <span class="ml-auto"><%= user.opinions.count %></span>
             </li>
-            <li class="list-group-item d-flex">
+            <li class="list-group-item d-flex my-0">
               <span>Followings:</span>
               <span class="ml-auto"><%= user.followings.count %></span>
             </li>
-            <li class="list-group-item d-flex">
+            <li class="list-group-item d-flex my-0">
               <span>Followers:</span>
               <span class="ml-auto"><%= user.followers.count %></span>
             </li>
