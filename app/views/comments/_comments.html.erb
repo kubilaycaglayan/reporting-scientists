@@ -3,8 +3,8 @@
     <div class="media my-2">
       <%= image_tag comment.user.profile_images.first.image.url,
        class: 'align-self-end mr-3 rounded-circle' %>
-      <div class="media-body">
-        <div>
+      <div class="media-body w-75">
+        <div class="w-100" >
           <p class="d-flex justify-content-end align-items-center">
             <span class="text-muted">
               <%= link_to "#{comment.user.username}", user_path(comment.user.id) %>
@@ -15,7 +15,7 @@
                ago
             </span>
           </p>
-          <span> <%= comment.content %> </span>
+          <p class="text-break text-wrap"> <%= comment.content %> </p>
         </div>
       </div>
     </div>

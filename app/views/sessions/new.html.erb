@@ -1,7 +1,8 @@
 <%= form_for @user, url: sessions_path do |form| %>
   <div class="field">
     <%= form.label "Sign in with username:", class: 'mb-3 text-center' %>
-    <%= form.text_field :username, required: true, class: 'py-4 text-center', spellcheck: false %>
+    <%= form.text_field :username, required: true, maxlength: 40,
+    class: 'py-4 text-center', spellcheck: false %>
   </div>
   <div class="note">
     <p>Welcome to Chirping Scientists</p>

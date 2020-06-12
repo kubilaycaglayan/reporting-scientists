@@ -1,4 +1,13 @@
-<div class=" edit_user">
+<% content_for :right do %>
+  <div class="my-5 mx-auto W-100">
+    <div class="btn btn-danger mx-auto my-5">
+      <%# <%= link_to 'Delete My Account',  %>
+      DELETE
+    </div>
+  </div>
+<% end %>
+
+<div class=" edit_user mb-5">
 <%= form_with(model: @user, local: true) do |form| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -19,12 +28,14 @@
   <div class="d-flex mt-4 row">
     <div class="field col-12 text-center">
       <%= form.label 'Username:', class: 'py-2' %>
-      <%= form.text_field :username, required: true, class: 'py-4 w-25 text-center', spellcheck: false %>
+      <%= form.text_field :username, required: true, maxlength: 40,
+       class: 'py-4 px-1 w-25 text-center', spellcheck: false %>
     </div>
 
     <div class="field col-12 text-center">
       <%= form.label 'Full name:', class: 'py-2' %>
-      <%= form.text_field :fullname, required: true, class: 'py-4 w-25 text-center', spellcheck: false %>
+      <%= form.text_field :fullname, required: true, maxlength: 40,
+       class: 'py-4 px-1 w-25 text-center', spellcheck: false %>
     </div>
 </div>
 
@@ -34,7 +45,8 @@
 
       <%= form.fields_for :cover_images do |foto_form| %>
         <%= foto_form.label :image, "Upload your cover image:" %><br />
-              <%= foto_form.file_field :image, class: "mt-3" %>
+              <%= foto_form.file_field :image, class: "mt-3",
+              accept: "image/*" %>
         <% if @user.cover_images.exists? %>
           <% @user.cover_images.each do |photo| %>
 
@@ -49,7 +61,8 @@
     <div class="col-12 text-center mt-4">
      <%= form.fields_for :profile_images do |foto_form| %>
         <%= foto_form.label :image, "Upload your profile image:" %><br />
-                <%= foto_form.file_field :image, class: "mt-3 text-center" %>
+                <%= foto_form.file_field :image, class: "mt-3 text-center",
+                accept: "image/*" %>
         <% if @user.profile_image? %>
           <% @user.profile_images.each do |photo| %>
             <%= image_tag photo.image.url %>

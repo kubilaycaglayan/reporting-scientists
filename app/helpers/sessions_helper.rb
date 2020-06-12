@@ -10,7 +10,7 @@ module SessionsHelper
   def current_user
     signed_in? ? User.find(session[:current_user_id]) : nil
   rescue StandardError
-    session[:current_user_id] = nil
+    sign_out
     flash[:notice] = 'This user has been removed.'
   end
 
@@ -22,5 +22,9 @@ module SessionsHelper
     return if signed_in?
 
     link_to 'Back to Sign In Page', new_session_path, class: 'btn btn-primary text-white'
+  end
+
+  def sign_out
+    session[:current_user_id] = nil
   end
 end

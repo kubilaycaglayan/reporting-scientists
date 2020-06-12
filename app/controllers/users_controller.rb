@@ -49,6 +49,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    sign_out
+    User.find(current_user.id).destroy
+  end
+
   private
 
   def set_user

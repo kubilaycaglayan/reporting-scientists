@@ -6,12 +6,14 @@
     <div class="d-flex justify-content-center">
       <div class="field mx-1">
         <%= form.label :username, class: 'py-2' %>
-        <%= form.text_field :username, required: true, class: 'py-4 text-center', spellcheck: false %>
+        <%= form.text_field :username, required: true, maxlength: 40,
+        class: 'py-4 text-center m-1', spellcheck: false %>
       </div>
 
       <div class="field mx-1">
         <%= form.label :fullname, class: 'py-2' %>
-        <%= form.text_field :fullname, required: true, class: 'py-4 text-center', spellcheck: false %>
+        <%= form.text_field :fullname, required: true, maxlength: 40,
+        class: 'py-4 text-center m-1', spellcheck: false %>
       </div>
     </div>
   <div class="note">
