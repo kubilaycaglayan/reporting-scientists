@@ -1,0 +1,26 @@
+<div class="your_tweet bg-white border border_dark rounded p-4 my-3 mx-auto">
+
+<%= form_with(model: @opinion, local: true) do |form| %>
+  <% if @opinion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opinion.errors.count, "error") %> prohibited this @opinion from being saved:</h2>
+
+      <ul>
+        <% @opinion.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label 'Share the latest news in the science world' %>
+    <%= form.text_area :text, required: true, maxlength: 140 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Report', class: 'btn btn-primary'%>
+  </div>
+<% end %>
+
+</div>

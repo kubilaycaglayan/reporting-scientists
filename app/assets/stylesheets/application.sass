@@ -1,0 +1,302 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$background_dark_blue: #213246
+$background_blue: #52A6E6
+$background_gray: #e3e5e8
+$border_dark: #172833
+
+$gray_text: #657B90
+$light_gray_text: #ADBAC6
+$blue_text: #90C1E8
+$success: #5cb85c
+
+html *
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Nunito', sans-serif
+  .btn-primary
+    background-color: $background_blue
+    border-color: $background_blue
+  .text-primary
+    color: $background_blue !important
+  a
+    color: inherit
+    text-decoration: none
+    &:hover
+      text-decoration: none
+      color: inherit
+      background-color: inherit
+
+body
+  background-color: $background_gray
+  .welcome
+    background-image: url("https://i.pinimg.com/originals/d0/50/ff/d050ff68d0d1e749fe1f588e3760af2d.jpg")
+    background-size: cover
+    background-position-y: 100%
+    height: 100vh
+    font-family: 'Nunito', sans-serif
+    .fas
+      font-size: 20px
+    .prompt
+      .invitation
+        text-align: center
+        font-size: 5rem
+        color: $background_blue
+        font-family: 'Sue Ellen Francisco', cursive
+        background-color: $background_dark_blue
+        min-width: 600px
+      .by_me
+        font-size: 0.7rem
+        color: white
+        position: relative
+        width: 450px
+        right: -300px
+        top: -60px
+        .fab
+          font-size: 2rem
+        a
+          color: white
+          &:hover
+            text-decoration: none
+            background-color: none
+    .note
+      p
+        font-size: 1.2rem
+    label
+      font-size: 1.5rem
+    input
+      width: 20vw
+      height: 2.5rem
+      font-size: 1.4rem
+  .left_bar
+    font-family: 'Nunito', sans-serif
+    font-weight: bold
+    z-index: 99
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 16.8%
+    height: 100vh
+    background-color: $background_dark_blue
+    color: $gray_text
+    .media
+      img
+        width: 25%
+      .media-body
+        display: block
+        width: 70%
+        a
+          font-size: 1.2rem
+          color: $light_gray_text
+          word-wrap: break-word
+          text-wrap: true
+          overflow-wrap: break-word
+          &:hover
+            color: white
+    .stats
+      p
+        font-size: 1.3rem
+        padding: 3% 0
+        color: $light_gray_text
+      .col-6
+        border: 1px solid $border_dark
+      .followers
+        border-left: none
+      h5
+        font-size: 0.8rem
+    .navigation
+      text-align: left
+      .link_to
+        font-size: 0.7rem
+        color: $gray_text
+        @media screen and (min-width: 1050px)
+          font-size: 0.9rem
+        @media screen and (min-width: 1150px)
+          font-size: 1rem
+        @media screen and (min-width: 1250px)
+          font-size: 1.1rem
+        @media screen and (min-width: 1300px)
+          font-size: 1.2rem
+        a
+          color: $gray_text
+          &:hover
+            background-color: inherit
+            color: white
+            text-decoration: none
+  .top_bar
+    background-color: $background_blue
+    z-index: 50
+    height: 60px
+    position: fixed
+    top: 0
+    width: 100%
+    .wrapper
+      width: 100%
+      height: 100%
+    .top_logo
+      font-size: 40px
+      color: white
+      left: 0
+    .notice
+      #notice
+        color: white
+    .prompt
+      margin-right: 24%
+      font-family: 'Sue Ellen Francisco', cursive
+      font-size: 1.6rem
+      color: $background_dark_blue
+  .right_bar
+    background-color: $background_gray
+    padding-top: 60px
+    height: 100vh
+    border-left: 1px solid gray
+    position: fixed
+    right: 0
+    display: block
+    overflow: auto
+    .who_to_follow
+      h4
+        font-size: 2vw
+        color: $gray_text
+        border-bottom: black solid 1px
+        background-color: $background_gray
+      .followed_by_notice
+        font-size: 1vw
+        width: 90%
+        p
+          font-size: 0.8vw
+          span
+            .followed_by
+              color: red
+      .btn
+        font-size: 1vw
+      img
+        width: 50px
+        height: 50px
+    .right_profile
+      h4
+        width: 100%
+        word-wrap: break-word
+        text-wrap: true
+        overflow-wrap: break-word
+        font-size: 1.7vw
+      img
+        width: 100px
+      .col-4
+        border: 1px $gray_text solid
+      .stats
+        h5
+          font-size: 0.7rem
+        p
+          font-size: 1.3rem
+        .tweets
+          border-left: none
+        .followings
+          border-left: none
+          border-right: none
+        .followers
+          border-right: none
+      .followed_by
+          font-size: 1vw
+    .followers
+      img
+        width: 50px
+        height: 50px
+  .mid-wrapper
+    padding-top: 60px
+    .ribbon
+      color: $border_dark
+      text-align: center
+    .recent_tweets
+      .comment_section
+        .create_comment
+          input
+        .comments
+          img
+            width: 30px
+            height: 30px
+    .recent_tweets,
+    .your_tweet
+      width: 100%
+      .media
+        h5
+          a
+            color: black
+        .time_ago
+          float: right
+      .tweet
+        font-size: 1rem
+      width: 90%
+      img
+        width: 80px
+        height: 80px
+    .your_tweet
+      label
+        font-size: 1rem
+        margin-bottom: 0.5rem
+      textarea
+        width: 100%
+        line-height: 2rem
+        height: 7rem
+        font-size: 1.5rem
+        padding: 1rem
+        outline: none
+    .cover_image
+      height: 300px
+      overflow: hidden
+      img
+        width: 100%
+        margin-top: -5%
+    .edit_user
+      label
+        font-size: 1rem
+        text-align: center
+        color: $success
+      img
+        width: 120px
+      input
+        height: 1.5rem
+        font-size: 0.9rem
+      .note
+        p
+          font-size: 1rem
+    .scientists
+      .card
+        width: 100%
+        img
+          width: 110px
+          height: 110px
+        .latest
+          margin-top: 3%
+        .card-body
+          h5
+            font-size: 1.5vw
+    .create_new_scientist
+      margin-top: 5%
+      label
+        font-size: 1rem
+      input
+        height: 1rem
+        font-size: 1.5rem
+        width: 20vw
+      .btn
+        width: 50%
+        height: 3rem
+      .fas
+        font-size: 1.5rem

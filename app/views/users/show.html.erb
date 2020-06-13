@@ -1,0 +1,14 @@
+<div class="show_user">
+<div class="cover_image">
+  <% if @user.cover_image? %>
+    <% @user.cover_images.each do |photo| %>
+      <%= image_tag photo.image.url %>
+    <% end %>
+  <% end %>
+</div>
+
+<% render 'users/right_profile' %>
+
+<%= render 'opinions/recent_tweets', tweets: @user.opinions.order(id: :desc) %>
+
+</div>

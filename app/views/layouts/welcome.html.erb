@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reporting Scientists</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,800;1,400&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="welcome d-flex flex-column justify-content-center align-items-center">
+      <div class="prompt">
+        <h1 class="invitation m-2 display-1 p-5 rounded-pill">Reporting Scientists</h1>
+        <div class="by_me">
+          <i class="fab fa-twitter"></i>
+          <span>Recreation by <a href="https://kubilaycaglayan.com" target="_blank">Kubilay Çağlayan</a></span>
+        </div>
+      </div>
+      <div class="bg-white p-4 rounded text-center">
+        <p id="notice"><%= notice %></p>
+      <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
