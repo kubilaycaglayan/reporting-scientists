@@ -1,0 +1,89 @@
+<% content_for :right do %>
+  <div class="my-5 mx-auto W-100 text-center">
+    <div class="btn btn-danger mx-auto my-5 text-center">
+      <%= link_to 'Delete My Account', user_path(current_user.id),
+      class: 'text-white mx-auto my-5', method: :delete,
+      data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
+
+<div class=" edit_user mb-5">
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="note text-center mt-5">
+    <p>You can change your name, username, profile photo, and cover photo ...</p>
+  </div>
+<div class="container-fluid">
+  <div class="d-flex mt-4 row">
+    <div class="field col-12 text-center">
+      <%= form.label 'Username:', class: 'py-2' %>
+      <%= form.text_field :username, required: true, maxlength: 40,
+       class: 'py-4 px-1 w-25 text-center', spellcheck: false %>
+    </div>
+
+    <div class="field col-12 text-center">
+      <%= form.label 'Full name:', class: 'py-2' %>
+      <%= form.text_field :fullname, required: true, maxlength: 40,
+       class: 'py-4 px-1 w-25 text-center', spellcheck: false %>
+    </div>
+</div>
+
+    <div class="row mt-4">
+    <div class="col-12 text-center mt-4">
+
+
+      <%= form.fields_for :cover_images do |foto_form| %>
+        <%= foto_form.label :image, "Upload your cover image:" %><br />
+              <%= foto_form.file_field :image, class: "mt-3",
+              accept: "image/*" %>
+        <% if @user.cover_images.exists? %>
+          <% @user.cover_images.each do |photo| %>
+
+            <%= image_tag photo.image.url %>
+          <% end %>
+        <% end %>
+
+        <%= foto_form.text_field :image_type, value: 'cover', hidden: true %>
+      <% end %>
+    </div>
+
+    <div class="col-12 text-center mt-4">
+     <%= form.fields_for :profile_images do |foto_form| %>
+        <%= foto_form.label :image, "Upload your profile image:" %><br />
+                <%= foto_form.file_field :image, class: "mt-3 text-center",
+                accept: "image/*" %>
+        <% if @user.profile_image? %>
+          <% @user.profile_images.each do |photo| %>
+            <%= image_tag photo.image.url %>
+          <% end %>
+        <% end %>
+
+        <%= foto_form.text_field :image_type, value: 'profile', hidden: true %>
+     <% end %>
+    </div>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-12 text-center">
+      <div class="actions mt-4 pt-3 text-center">
+        <%= form.submit 'Save Changes', class: 'btn btn-success pb-4' %>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>
+</div>

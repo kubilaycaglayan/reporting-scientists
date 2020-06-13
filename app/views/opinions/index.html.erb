@@ -1,0 +1,11 @@
+<div class="ribbon">
+  <h2 class="text-center pt-2">Scientific Reports</h2>
+</div>
+
+<%= render 'users/who_to_follow', unfollowings: current_user.unfollowings %>
+
+<%= render 'form', user: @user %>
+
+<%= render 'opinions/recent_tweets', tweets: @tweets %>
+
+<br>

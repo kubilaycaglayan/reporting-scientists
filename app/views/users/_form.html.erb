@@ -1,0 +1,28 @@
+<div class="create_new_scientist text-center">
+  <h4>Create New User</h4>
+  <%= form_with(model: user, local: true) do |form| %>
+
+
+    <div class="d-flex justify-content-center">
+      <div class="field mx-1">
+        <%= form.label :username, class: 'py-2' %>
+        <%= form.text_field :username, required: true, maxlength: 40,
+        class: 'py-4 text-center m-1', spellcheck: false %>
+      </div>
+
+      <div class="field mx-1">
+        <%= form.label :fullname, class: 'py-2' %>
+        <%= form.text_field :fullname, required: true, maxlength: 40,
+        class: 'py-4 text-center m-1', spellcheck: false %>
+      </div>
+    </div>
+  <div class="note">
+    <p>You can change your profile photo and cover photo after signing in...</p>
+  </div>
+    <div class="actions d-flex justify-content-center align-items-center pl-5 mt-4">
+      <%= form.submit 'Create User and Sign In', class: 'btn btn-primary p-0 px-3' %>
+      <i class="fas fa-user-plus text-primary px-1 pl-3"></i>
+      <i class="fas fa-sign-in-alt text-primary px-1"></i>
+    </div>
+  <% end %>
+</div>
