@@ -23,7 +23,8 @@
   <% end %>
 
   <div class="note text-center mt-5">
-    <p>You can change your name, username, profile photo, and cover photo ...</p>
+    <p>You can change your name, username, profile photo,
+      <br> and cover photo(less than 1MB) ...</p>
   </div>
 <div class="container-fluid">
   <div class="d-flex mt-4 row">
@@ -79,7 +80,7 @@
   <div class="row text-center">
     <div class="col-12 text-center">
       <div class="actions mt-4 pt-3 text-center">
-        <%= form.submit 'Save Changes', class: 'btn btn-success pb-4' %>
+        <%= form.submit 'Save Changes', class: 'btn btn-success pb-4', id: 'save-changes' %>
       </div>
     </div>
   </div>

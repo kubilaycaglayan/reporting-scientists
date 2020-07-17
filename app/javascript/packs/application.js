@@ -15,3 +15,26 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+window.onclick = () => {
+  const saveChangesButton = document.getElementById('save-changes')
+  if (saveChangesButton !== null) {
+    saveChangesButton.addEventListener('click', function(event) {
+      const cover_image = document.getElementById('user_cover_images_attributes_0_image')
+      const profile_image = document.getElementById('user_profile_images_attributes_0_image')
+      if (cover_image.files[0] !== undefined ) {
+        size = parseInt(cover_image.files[0].size) / 1024
+        if ( size > 1024 ) {
+          event.preventDefault()
+        }
+      }
+      if (profile_image.files[0] !== undefined ) {
+        size = parseInt(profile_image.files[0].size) / 1024
+        if ( size > 1024 ) {
+          event.preventDefault()
+        }
+      }
+      console.log('finished validation')
+    } )
+  }
+}
