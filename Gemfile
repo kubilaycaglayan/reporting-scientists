@@ -8,6 +8,8 @@ gem 'paperclip'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 
+gem 'aws-sdk'
+
 # Deployable to Heroku
 gem 'pg'
 # Use Puma as the app server
