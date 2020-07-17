@@ -20,4 +20,12 @@ module UsersHelper
       'You can follow this user.'
     end
   end
+
+  def last_three_user
+    User.all[0,12]
+  end
+
+  def show_avatar(user)
+    render 'users/show_avatar', user: user
+  end
 end

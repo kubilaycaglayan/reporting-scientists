@@ -10,7 +10,12 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(username: params[:user][:username])
+    if params[:user].nil?
+      user = User.find_by(username: params[:format])
+    else
+      user = User.find_by(username: params[:user][:username])
+    end
+    
     if user
       flash[:notice] = 'Login successful.'
       session[:current_user_id] = user.id

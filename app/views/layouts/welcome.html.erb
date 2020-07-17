@@ -16,6 +16,11 @@
   <body>
     <div class="welcome d-flex flex-column justify-content-center align-items-center">
       <div class="prompt">
+        <div class="quick-sign-in text-white">
+          <% last_three_user.each do |user| %>
+          <%= link_to show_avatar(user), sessions_path(user.username), method: :post, title: user.fullname %>
+          <% end %>
+        </div>
         <h1 class="invitation m-2 display-1 p-5 rounded-pill">Reporting Scientists</h1>
         <div class="by_me">
           <i class="fab fa-twitter"></i>
