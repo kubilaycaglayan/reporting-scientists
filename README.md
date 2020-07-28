@@ -1,6 +1,6 @@
 # Twitter Recreation - (Theme: Reporting Scientists)
 
-> I have built a reporting environment for best scientists. They can share their latest outcomes in a user-friendly place. Scientists can follow each other and report their findings. They can also comment on other reports.
+> I have built a reporting environment for the best scientists. They can share their latest outcomes in a user-friendly place. Scientists can follow each other and report their findings. They can also comment on other reports.
 
 ### PROFILE
 
