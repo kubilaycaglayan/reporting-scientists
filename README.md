@@ -1,6 +1,6 @@
 # Ruby On Rails Capstone: Twitter Recreation - (Theme: Reporting Scientists)
 
-> In this capstone, I have built a reporting environment for best scientists. They can share their latest outcomes in a user friendly place. Scientists can follow each other and report their findings. They can also comment on other reports.
+> In this capstone, I have built a reporting environment for best scientists. They can share their latest outcomes in a user-friendly place. Scientists can follow each other and report their findings. They can also comment on other reports.
 
 ### PROFILE
 
@@ -20,13 +20,17 @@
 
 #### FEATURES
 
-- You can sign up with username and fullname.
-- Signing in only requires username. Which also is easily extandible to more secure authentication types.
+- You can sign up with username and full name.
+- Signing in only requires a username.
 - You can report your latest findings in your field.
 - You can follow other scientists.
 - You can comment on reports.
 - You can upload your own profile photo and cover image.
-- You can see all the scientists in the website.
+- You can see all the scientists on the website.
+
+#### FUTURE FEATURES
+
+- Sign In is easily extendible to more secure authentication types.
 
 ## Built With
 
@@ -51,7 +55,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-You can run this commands to make this app running on your computer:
+You can run these commands to make this app running on your computer:
 - `git clone https://github.com/kubilaycaglayan/Ruby-on-Rails-Capstone-Project-Twitter.git`
 - `cd Ruby-on-Rails-Capstone-Project-Twitter`
 - `bundle install`
