@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :followings, only: [:new, :create, :destroy]
   resources :opinions, only: [:index, :new, :create]
+
+  namespace :api, :defaults => {:format => :json} do
+    resources :users
+  end
+
   root to: 'sessions#new'
   get '*path' => redirect('/')
 end

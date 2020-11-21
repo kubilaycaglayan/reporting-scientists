@@ -86,4 +86,9 @@ class User < ApplicationRecord
 
     shared_connections.sample
   end
+
+  def as_json(options = {})
+    { :name => self.username,
+      :id => self.id }
+  end
 end
